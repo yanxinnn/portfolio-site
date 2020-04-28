@@ -1,12 +1,11 @@
 //** Variables **********
-// var playerIdle1 = "images/playerIdle1.png";
+var playerIdle1 = "images/playerIdle1.png";
 // var playerIdle2 = "images/playerIdle2.png";
 // var playerIdle3 = "images/playerIdle3.png";
 //var playerIdle;
 
 function preload() {
-  //let test = loadImage("images/playerIdle1.png");
-  //playerIdle = loadAnimation(test);
+  let test = loadImage("images/playerIdle1.png");
   //playerIdle = loadAnimation(playerIdle1, playerIdle2, playerIdle3);
 	//playerIdle = loadAnimation(playerIdle1, playerIdle2, playerIdle1, playerIdle3, playerIdle1, playerIdle3);
 }
@@ -23,7 +22,7 @@ function draw() {
 
 
 
-  //image(test, window.innerWidth/2, window.innerHeight/2);
+  image(test, window.innerWidth/2, window.innerHeight/2);
 	//animation(playerIdle, window.innerWidth/2, window.innerHeight/2);
 
 } // function draw
