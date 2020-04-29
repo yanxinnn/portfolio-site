@@ -51,8 +51,6 @@ function draw() {
     player.velocity.y = -3.5;
   }
 
-  }
-
 } // function draw
 
 function windowResized() {
