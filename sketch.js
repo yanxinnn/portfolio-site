@@ -24,7 +24,7 @@ function setup() {
 	createCanvas(window.innerWidth, window.innerHeight);
 
   // Player Animations
-  playerIdle.frameDelay = 15;
+  playerIdle.frameDelay = 18;
   playerRun.frameDelay = 15;
 
   player = createSprite(window.innerWidth/8, window.innerHeight/5, 100, 100);
@@ -52,7 +52,7 @@ function draw() {
     player.changeAnimation("run");
     player.velocity.x = -5.5;
   }
-  if (keyIsDown(UP_ARROW) || keyIsDown(87)) {
+  else if (keyIsDown(UP_ARROW) || keyIsDown(87)) {
     player.changeAnimation("run");
     player.velocity.y = -5.5;
   }
