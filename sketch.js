@@ -30,7 +30,7 @@ function draw() {
     player.changeAnimation("run");
     player.velocity.x = 5;
   }
-  else if (keyisDown(37)) { // left arrow key
+  else if (keyIsDown(37)) { // left arrow key
     player.velocity.x -= 5;
   }
   else {
