@@ -39,3 +39,7 @@ function draw() {
   }
 
 } // function draw
+
+function windowResized() {
+  resizeCanvas(window.innerWidth, window.innerHeight);
+}
