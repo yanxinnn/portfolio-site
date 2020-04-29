@@ -5,10 +5,10 @@ var playerIdle1 = "images/playerIdle1.png";
 var playerIdle2 = "images/playerIdle2.png";
 var playerIdle3 = "images/playerIdle3.png";
 var playerIdle;
-var playerRun1 = "images/playerRun1";
-var playerRun2 = "images/playerRun2";
-var playerRun3 = "images/playerRun3";
-var playerRun4 = "images/playerRun4";
+var playerRun1 = "images/playerRun1.png";
+var playerRun2 = "images/playerRun2.png";
+var playerRun3 = "images/playerRun3.png";
+var playerRun4 = "images/playerRun4.png";
 var playerRun;
 
 function preload() {
