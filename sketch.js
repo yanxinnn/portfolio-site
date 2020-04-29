@@ -24,7 +24,8 @@ function setup() {
 	createCanvas(window.innerWidth, window.innerHeight);
 
   // Player Animations
-  playerIdle.frameDelay = 10;
+  playerIdle.frameDelay = 15;
+  playerRun.frameDelay = 15;
 
   player = createSprite(window.innerWidth/8, window.innerHeight/5, 100, 100);
   player.addAnimation("idle", playerIdle);
