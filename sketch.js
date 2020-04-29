@@ -19,6 +19,7 @@ function setup() {
 
   // Player Animations
   playerIdle.frameDelay = 15;
+  console.log(playerIdle.frameDelay);
 
   player = createSprite(window.innerWidth/8, window.innerHeight/5, 100, 100);
   player.addAnimation("idle", playerIdle);
