@@ -26,13 +26,16 @@ function draw() {
 	drawSprites();
 
   // Player Movements
-  if(keyIsDown(32)) { // right arrow key
+  if(keyIsDown(39)) { // right arrow key
     player.changeAnimation("run");
-    player.velocity.x = 1;
+    player.velocity.x = 5;
+  }
+  else if (keyisDown(37)) { // left arrow key
+    player.velocity.x -= 5;
   }
   else {
-    robot.changeAnimation("idle");
-    robot.velocity.x = 0;
+    player.changeAnimation("idle");
+    player.velocity.x = 0;
   }
 
 } // function draw
