@@ -37,11 +37,11 @@ function draw() {
   player.velocity.x = 0;
   player.velocity.y = 0;
 
-  if (keyIsDown(RIGHT_ARROW) || event.which == 68) {
+  if (keyIsDown(RIGHT_ARROW) || event.keyCode == 68) {
     player.changeAnimation("run");
     player.velocity.x = 3.5;
   }
-  else if (keyIsDown(LEFT_ARROW) || event.which == 65) {
+  else if (keyIsDown(LEFT_ARROW) || event.keyCode == 65) {
     player.velocity.x = -3.5;
   }
   if (keyIsDown(UP_ARROW)) {
