@@ -16,11 +16,23 @@ function setup() {
 
   player = createSprite(window.innerWidth/8, window.innerHeight/5, 100, 100);
   player.addAnimation("idle", playerIdle1, playerIdle2, playerIdle1, playerIdle3, playerIdle1, playerIdle3);
+  player.addAnimation("run", playerIdle1);
+
 } // function setup
 
 //** Draw ****************
 function draw() {
 	background(skyBackground);
 	drawSprites();
+
+  // Player Movements
+  if(keyIsDown(32)) { // right arrow key
+    player.changeAnimation("run");
+    player.velocity.x = 1;
+  }
+  else {
+    robot.changeAnimation("idle");
+    robot.velocity.x = 0;
+  }
 
 } // function draw
