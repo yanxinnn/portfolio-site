@@ -7,23 +7,20 @@ var playerIdle3 = "images/playerIdle3.png";
 var playerIdle;
 
 function preload() {
-  playerIdle = loadAnimation(playerIdle1, playerIdle2, playerIdle3);
   skyBackground = loadImage(sky);
-	//playerIdle = loadAnimation(playerIdle1, playerIdle2, playerIdle1, playerIdle3, playerIdle1, playerIdle3);
 }
 
 //** Canvas *************
 function setup() {
 	createCanvas(window.innerWidth, window.innerHeight);
 
+  player = createSprite(window.innerWidth/8, window.innerHeight/5, 100, 100);
+  player.addAnimation("idle", playerIdle1, playerIdle2, playerIdle1, playerIdle3, playerIdle1, playerIdle3);
 } // function setup
 
 //** Draw ****************
 function draw() {
 	background(skyBackground);
-
-
-
-	animation(playerIdle, window.innerWidth/2, window.innerHeight/2);
+	drawSprites();
 
 } // function draw
