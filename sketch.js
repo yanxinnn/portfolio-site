@@ -22,7 +22,7 @@ function setup() {
 
   player = createSprite(window.innerWidth/8, window.innerHeight/5, 100, 100);
   player.addAnimation("idle", playerIdle);
-  player.addAnimation("run", playerIdle);
+  player.addAnimation("run", playerIdle1);
 
 } // function setup
 
