@@ -33,6 +33,10 @@ function draw() {
 	drawSprites();
 
   // Player Movements
+  player.changeAnimation("idle");
+  player.velocity.x = 0;
+  player.velocity.y = 0;
+
   if (keyIsDown(RIGHT_ARROW) || event.which == 68) {
     player.changeAnimation("run");
     player.velocity.x = 3.5;
@@ -40,9 +44,13 @@ function draw() {
   else if (keyIsDown(LEFT_ARROW) || event.which == 65) {
     player.velocity.x = -3.5;
   }
-  else {
-    player.changeAnimation("idle");
-    player.velocity.x = 0;
+  if (keyIsDown(UP_ARROW)) {
+    player.velocity.y = 3.5;
+  }
+  else if (keyIsDown(DOWN_ARROW)) {
+    player.velocity.y = -3.5;
+  }
+
   }
 
 } // function draw
