@@ -28,10 +28,10 @@ function draw() {
   // Player Movements
   if (keyIsDown(RIGHT_ARROW)) {
     player.changeAnimation("run");
-    player.velocity.x = 5;
+    player.velocity.x = 3;
   }
   else if (keyIsDown(LEFT_ARROW)) {
-    player.velocity.x -= 5;
+    player.velocity.x = -3;
   }
   else {
     player.changeAnimation("idle");
