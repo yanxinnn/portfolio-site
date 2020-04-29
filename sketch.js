@@ -32,11 +32,11 @@ function draw() {
 	drawSprites();
 
   // Player Movements
-  if (keyIsDown(RIGHT_ARROW)) {
+  if (keyIsDown(RIGHT_ARROW || "D")) {
     player.changeAnimation("run");
     player.velocity.x = 3;
   }
-  else if (keyIsDown(LEFT_ARROW)) {
+  else if (keyIsDown(LEFT_ARROW || "A")) {
     player.velocity.x = -3;
   }
   else {
