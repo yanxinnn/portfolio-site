@@ -46,19 +46,19 @@ function draw() {
 
   if (keyIsDown(RIGHT_ARROW) || keyIsDown(68)) {
     player.changeAnimation("run");
-    player.velocity.x = 3.5;
+    player.velocity.x = 5.5;
   }
   else if (keyIsDown(LEFT_ARROW) || keyIsDown(65)) {
     player.changeAnimation("run");
-    player.velocity.x = -3.5;
+    player.velocity.x = -5.5;
   }
   if (keyIsDown(UP_ARROW) || keyIsDown(87)) {
     player.changeAnimation("run");
-    player.velocity.y = 3.5;
+    player.velocity.y = -5.5;
   }
   else if (keyIsDown(DOWN_ARROW) || keyIsDown(83)) {
     player.changeAnimation("run");
-    player.velocity.y = -3.5;
+    player.velocity.y = 5.5;
   }
 
 } // function draw
