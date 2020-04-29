@@ -8,15 +8,21 @@ var playerIdle;
 
 function preload() {
   skyBackground = loadImage(sky);
+
+  // Player Animations
+  playerIdle = loadAnimation(playerIdle1, playerIdle2, playerIdle1, playerIdle3, playerIdle1, playerIdle3);
 }
 
 //** Canvas *************
 function setup() {
 	createCanvas(window.innerWidth, window.innerHeight);
 
+  // Player Animations
+  playerIdle.frameDelay = 2;
+
   player = createSprite(window.innerWidth/8, window.innerHeight/5, 100, 100);
-  player.addAnimation("idle", playerIdle1, playerIdle2, playerIdle1, playerIdle3, playerIdle1, playerIdle3);
-  player.addAnimation("run", playerIdle1);
+  player.addAnimation("idle", playerIdle);
+  player.addAnimation("run", playerIdle);
 
 } // function setup
 
