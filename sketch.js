@@ -18,8 +18,7 @@ function setup() {
 	createCanvas(window.innerWidth, window.innerHeight);
 
   // Player Animations
-  playerIdle.frameDelay = 15;
-  console.log(playerIdle.frameDelay);
+  playerIdle.frameDelay = 5;
 
   player = createSprite(window.innerWidth/8, window.innerHeight/5, 100, 100);
   player.addAnimation("idle", playerIdle);
@@ -29,6 +28,7 @@ function setup() {
 
 //** Draw ****************
 function draw() {
+  console.log(playerIdle.frameDelay);
 	background(skyBackground);
 	drawSprites();
 
