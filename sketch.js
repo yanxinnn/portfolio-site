@@ -18,11 +18,11 @@ function setup() {
 	createCanvas(window.innerWidth, window.innerHeight);
 
   // Player Animations
-  playerIdle.frameDelay = 5;
+  playerIdle.frameDelay = 10;
 
   player = createSprite(window.innerWidth/8, window.innerHeight/5, 100, 100);
   player.addAnimation("idle", playerIdle);
-  player.addAnimation("run", playerIdle1);
+  player.addAnimation("run", playerIdle);
 
 } // function setup
 
