@@ -44,10 +44,10 @@ function draw() {
   else if (keyIsDown(LEFT_ARROW) || event.keyCode == 65) {
     player.velocity.x = -3.5;
   }
-  if (keyIsDown(UP_ARROW)) {
+  if (keyIsDown(UP_ARROW) || event.keyCode == 87) {
     player.velocity.y = 3.5;
   }
-  else if (keyIsDown(DOWN_ARROW)) {
+  else if (keyIsDown(DOWN_ARROW) || event.keyCode == 83) {
     player.velocity.y = -3.5;
   }
 
