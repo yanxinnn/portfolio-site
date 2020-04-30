@@ -79,12 +79,14 @@ function draw() {
 	background(skyBackground);
 	drawSprites();
 
+  player.changeAnimation("idleRight");
+
   // Player Movements
-  if (lastKey == "right") {
-    player.changeAnimation("idleRight");
-  };
-  player.velocity.x = 0;
-  player.velocity.y = 0;
+  // if (lastKey == "right") {
+  //   player.changeAnimation("idleRight");
+  // };
+  // player.velocity.x = 0;
+  // player.velocity.y = 0;
 
   // if (keyIsDown(RIGHT_ARROW) || keyIsDown(68)) {
   //   player.changeAnimation("run");
