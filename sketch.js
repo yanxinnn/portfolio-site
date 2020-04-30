@@ -24,8 +24,8 @@ var playerRunLeft4 = "images/player/playerRunLeft4.png";
 var playerRunLeft;
 
 // Widgets
-var fullscreen1 = "images/widgets/fullscreenIcon1";
-var fullscreen2 = "images/widgets/fullscreenIcon2";
+var fullscreen1 = "images/widgets/fullscreenIcon1.png";
+var fullscreen2 = "images/widgets/fullscreenIcon2.png";
 var fullscreenIsOff;
 var fullscreenIsOn;
 
