@@ -9,11 +9,11 @@ var playerIdle1 = "images/player/playerIdle1.png";
 var playerIdle2 = "images/player/playerIdle2.png";
 var playerIdle3 = "images/player/playerIdle3.png";
 var playerIdle;
-// var playerRunRight1 = "images/player/playerRunRight1.png";
-// var playerRunRight2 = "images/player/playerRunRight2.png";
-// var playerRunRight3 = "images/player/playerRunRight3.png";
-// var playerRunRight4 = "images/player/playerRunRight4.png";
-// var playerRunRight;
+var playerRun1 = "images/player/playerRun1.png";
+var playerRun2 = "images/player/playerRun2.png";
+var playerRun3 = "images/player/playerRun3.png";
+var playerRun4 = "images/player/playerRun4.png";
+var playerRun;
 
 // Widgets
 // var fullscreen1 = "images/widgets/fullscreenIcon1.png";
@@ -27,10 +27,8 @@ function preload() {
   skyBackground = loadImage(sky);
 
   // Player Animations
-  playerIdle= loadAnimation(playerIdle1, playerIdle2, playerIdle1, playerIdle3, playerIdle1, playerIdle3);
-  // playerRunRight = loadAnimation(playerRunRight1, playerRunRight2, playerRunRight3, playerRunRight2, playerRunRight1, playerRunRight4, playerRunRight3, playerRunRight2);
-  // playerIdleLeft = loadAnimation(playerIdleLeft1, playerIdleLeft2, playerIdleLeft1, playerIdleLeft3, playerIdleLeft1, playerIdleLeft3);
-  // playerRunLeft = loadAnimation(playerRunLeft1, playerRunLeft2, playerRunLeft3, playerRunLeft2, playerRunLeft1, playerRunLeft4, playerRunLeft3, playerRunLeft2);
+  playerIdle = loadAnimation(playerIdle1, playerIdle2, playerIdle1, playerIdle3, playerIdle1, playerIdle3);
+  playerRun = loadAnimation(playerRun1, playerRun2, playerRun3, playerRun2, playerRun1, playerRun4, playerRun3, playerRun2);
 
   // Widgets
   // fullscreenIsOff = loadImage(fullscreen1);
@@ -45,13 +43,11 @@ function setup() {
 
   // Player Animations
   playerIdle.frameDelay = 18;
-  // playerRun.frameDelay = 15;
-  //
+  playerRun.frameDelay = 15;
+
   player = createSprite(window.innerWidth/8, window.innerHeight/5, 100, 100);
   player.addAnimation("idle", playerIdle);
-  // player.addAnimation("runRight", playerRunRight);
-  // player.addAnimation("idleLeft", playerIdleLeft);
-  // player.addAnimation("runLeft", playerRunLeft);
+  player.addAnimation("run", playerRun);
 
   // Widgets
   // widget = createSprite(window.innerWidth/20, window.innerHeight/15, 30, 30);
@@ -73,20 +69,26 @@ function draw() {
   player.changeAnimation("idle");
 
   // Player Movements
-  // if (lastKey == "right") {
-  //   player.changeAnimation("idleRight");
-  // };
-  // player.velocity.x = 0;
-  // player.velocity.y = 0;
+  player.changeAnimation("idle");
+  if (lastKey == "right") {
+    ghost.mirror(1);
+  }
+  else if (lastKey == "left") {
+    ghost.mirror(-1);
+  }
+  player.velocity.x = 0;
+  player.velocity.y = 0;
 
-  // if (keyIsDown(RIGHT_ARROW) || keyIsDown(68)) {
-  //   player.changeAnimation("run");
-  //   player.velocity.x = 5.5;
-  // }
-  // else if (keyIsDown(LEFT_ARROW) || keyIsDown(65)) {
-  //   player.changeAnimation("run");
-  //   player.velocity.x = -5.5;
-  // }
+  if (keyIsDown(RIGHT_ARROW) || keyIsDown(68)) {
+    lastKey = "right";
+    player.changeAnimation("run");
+    player.velocity.x = 5.5;
+  }
+  else if (keyIsDown(LEFT_ARROW) || keyIsDown(65)) {
+    lastKey = "left";
+    player.changeAnimation("run");
+    player.velocity.x = -5.5;
+  }
   // else if (keyIsDown(32)) { // spacebar jump
   //   player.changeAnimation("idle");
   //   player.velocity.y =
