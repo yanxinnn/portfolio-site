@@ -28,7 +28,6 @@ var fullscreen1 = "images/widgets/fullscreenIcon1";
 var fullscreen2 = "images/widgets/fullscreenIcon2";
 var fullscreenIsOff;
 var fullscreenIsOn;
-let fs = false;
 
 //** Preload *************
 function preload() {
@@ -65,13 +64,7 @@ function setup() {
   widget.addAnimation("isOff", fullscreenIsOff);
   widget.addAnimation("isOn", fullscreenIsOn);
   widget.onMousePressed = function() {
-    fullscreen(!fullscreen());
-    if (!fs) {
-      widget.changeAnimation("isOff");
-    }
-    else {
       widget.changeAnimation("isOn");
-    }
   }
 
 
