@@ -71,10 +71,10 @@ function draw() {
   // Player Movements
   player.changeAnimation("idle");
   if (lastKey == "right") {
-    ghost.mirror(1);
+    player.mirror(1);
   }
   else if (lastKey == "left") {
-    ghost.mirror(-1);
+    player.mirror(-1);
   }
   player.velocity.x = 0;
   player.velocity.y = 0;
