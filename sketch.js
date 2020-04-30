@@ -5,24 +5,15 @@ var sky = "images/blueSky.png";
 
 // Player Animation
 var lastKey = "right";
-var playerIdleRight1 = "images/player/playerIdleRight1.png";
-var playerIdleRight2 = "images/player/playerIdleRight2.png";
-var playerIdleRight3 = "images/player/playerIdleRight3.png";
-var playerIdleRight;
+var playerIdle1 = "images/player/playerIdle1.png";
+var playerIdle2 = "images/player/playerIdle2.png";
+var playerIdle3 = "images/player/playerIdle3.png";
+var playerIdle;
 // var playerRunRight1 = "images/player/playerRunRight1.png";
 // var playerRunRight2 = "images/player/playerRunRight2.png";
 // var playerRunRight3 = "images/player/playerRunRight3.png";
 // var playerRunRight4 = "images/player/playerRunRight4.png";
 // var playerRunRight;
-// var playerIdleLeft1 = "images/player/playerIdleLeft1.png";
-// var playerIdleLeft2 = "images/player/playerIdleLeft2.png";
-// var playerIdleLeft3 = "images/player/playerIdleLeft3.png";
-// var playerIdleLeft;
-// var playerRunLeft1 = "images/player/playerRunLeft1.png";
-// var playerRunLeft2 = "images/player/playerRunLeft2.png";
-// var playerRunLeft3 = "images/player/playerRunLeft3.png";
-// var playerRunLeft4 = "images/player/playerRunLeft4.png";
-// var playerRunLeft;
 
 // Widgets
 // var fullscreen1 = "images/widgets/fullscreenIcon1.png";
@@ -36,7 +27,7 @@ function preload() {
   skyBackground = loadImage(sky);
 
   // Player Animations
-  playerIdleRight = loadAnimation(playerIdleRight1, playerIdleRight2, playerIdleRight1, playerIdleRight3, playerIdleRight1, playerIdleRight3);
+  playerIdle= loadAnimation(playerIdle1, playerIdle2, playerIdle1, playerIdle3, playerIdle1, playerIdle3);
   // playerRunRight = loadAnimation(playerRunRight1, playerRunRight2, playerRunRight3, playerRunRight2, playerRunRight1, playerRunRight4, playerRunRight3, playerRunRight2);
   // playerIdleLeft = loadAnimation(playerIdleLeft1, playerIdleLeft2, playerIdleLeft1, playerIdleLeft3, playerIdleLeft1, playerIdleLeft3);
   // playerRunLeft = loadAnimation(playerRunLeft1, playerRunLeft2, playerRunLeft3, playerRunLeft2, playerRunLeft1, playerRunLeft4, playerRunLeft3, playerRunLeft2);
@@ -53,11 +44,11 @@ function setup() {
 	createCanvas(window.innerWidth, window.innerHeight);
 
   // Player Animations
-  playerIdleRight.frameDelay = 18;
+  playerIdle.frameDelay = 18;
   // playerRun.frameDelay = 15;
   //
   player = createSprite(window.innerWidth/8, window.innerHeight/5, 100, 100);
-  player.addAnimation("idleRight", playerIdleRight);
+  player.addAnimation("idle", playerIdle);
   // player.addAnimation("runRight", playerRunRight);
   // player.addAnimation("idleLeft", playerIdleLeft);
   // player.addAnimation("runLeft", playerRunLeft);
@@ -75,11 +66,11 @@ function setup() {
 
 //** Draw ****************
 function draw() {
-  console.log(playerIdleRight.frameDelay);
+  console.log(playerIdle.frameDelay);
 	background(skyBackground);
 	drawSprites();
 
-  player.changeAnimation("idleRight");
+  player.changeAnimation("idle");
 
   // Player Movements
   // if (lastKey == "right") {
