@@ -92,7 +92,7 @@ function setup() {
 
 //** Draw ****************
 function draw() {
-  console.log(playerIdle.frameDelay);
+  console.log(fullscreen());
 	background(skyBackground);
 	drawSprites();
 
@@ -138,10 +138,5 @@ function draw() {
 } // function draw
 
 function windowResized() {
-  if (fullscreen()) {
-    resizeCanvas(displayWidth, displayHeight);
-  }
-  else {
-    resizeCanvas(window.innerWidth, window.innerHeight);
-  }
+  resizeCanvas(window.innerWidth, window.innerHeight);
 }
