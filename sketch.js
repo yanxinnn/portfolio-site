@@ -40,12 +40,14 @@ function preload() {
 function setup() {
 
 	createCanvas(window.innerWidth, window.innerHeight);
+  var staticWindowWidth = window.innerWidth;
+  var staticWindowHeight = window.innerHeight;
 
   // Player Animations
   playerIdle.frameDelay = 18;
   playerRun.frameDelay = 15;
 
-  player = createSprite(window.innerWidth/8, window.innerHeight * 4 / 7, 100, 100);
+  player = createSprite(staticWindowWidth/8, staticWindowHeight * 4 / 7, 100, 100);
   player.addAnimation("idle", playerIdle);
   player.addAnimation("run", playerRun);
 
