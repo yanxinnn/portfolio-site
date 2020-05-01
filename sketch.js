@@ -57,14 +57,14 @@ function setup() {
   widget.addAnimation("isOn", fullscreenIsOn);
   widget.changeAnimation("isOff");
   widget.onMouseOver = function () {
-    widget.tint(255, 126);
+    this.setAlpha(100);
   }
   widget.onMousePressed = function() {
     if (widget.getAnimationLabel() == "isOff") {
-      widget.changeAnimation("isOn");
+      this.changeAnimation("isOn");
     }
     else {
-      widget.changeAnimation("isOff");
+      this.changeAnimation("isOff");
     }
   }
 
