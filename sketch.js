@@ -45,12 +45,12 @@ function setup() {
   playerIdle.frameDelay = 18;
   playerRun.frameDelay = 15;
 
-  player = createSprite(window.innerWidth/8, window.innerHeight * 5 / 7, 100, 100);
+  player = createSprite(window.innerWidth/8, window.innerHeight * 4 / 7, 100, 100);
   player.addAnimation("idle", playerIdle);
   player.addAnimation("run", playerRun);
 
   // Widgets
-  widget = createSprite(window.innerWidth/20, window.innerHeight * 14 / 15, 30, 30);
+  widget = createSprite(window.innerWidth * 17 / 20, window.innerHeight / 15, 30, 30);
   widget.addAnimation("isOff", fullscreenIsOff);
   widget.addAnimation("isOn", fullscreenIsOn);
   widget.onMousePressed = function() {
