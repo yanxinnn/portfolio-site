@@ -16,10 +16,10 @@ var playerRun4 = "images/player/playerRun4.png";
 var playerRun;
 
 // Widgets
-// var fullscreen1 = "images/widgets/fullscreenIcon1.png";
-// var fullscreen2 = "images/widgets/fullscreenIcon2.png";
-// var fullscreenIsOff;
-// var fullscreenIsOn;
+var fullscreen1 = "images/widgets/fullscreenIcon1.png";
+var fullscreen2 = "images/widgets/fullscreenIcon2.png";
+var fullscreenIsOff;
+var fullscreenIsOn;
 
 //** Preload *************
 function preload() {
@@ -31,8 +31,8 @@ function preload() {
   playerRun = loadAnimation(playerRun1, playerRun2, playerRun3, playerRun2, playerRun1, playerRun4, playerRun3, playerRun2);
 
   // Widgets
-  // fullscreenIsOff = loadImage(fullscreen1);
-  // fullscreenIsOn = loadImage(fullscreen2);
+  fullscreenIsOff = loadImage(fullscreen1);
+  fullscreenIsOn = loadImage(fullscreen2);
 
 }
 
@@ -50,12 +50,12 @@ function setup() {
   player.addAnimation("run", playerRun);
 
   // Widgets
-  // widget = createSprite(window.innerWidth/20, window.innerHeight/15, 30, 30);
-  // widget.addAnimation("isOff", fullscreenIsOff);
-  // widget.addAnimation("isOn", fullscreenIsOn);
-  // widget.onMousePressed = function() {
-  //     widget.changeAnimation("isOn");
-  // }
+  widget = createSprite(window.innerWidth/20, window.innerHeight/15, 30, 30);
+  widget.addAnimation("isOff", fullscreenIsOff);
+  widget.addAnimation("isOn", fullscreenIsOn);
+  widget.onMousePressed = function() {
+      widget.changeAnimation("isOn");
+  }
 
 
 } // function setup
