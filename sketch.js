@@ -61,7 +61,6 @@ function setup() {
       widget.changeAnimation("isOn");
     }
     else {
-      widget.getAnimation("isOn") {
         widget.changeAnimation("isOff");
       }
     }
