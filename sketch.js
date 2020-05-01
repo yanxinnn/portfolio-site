@@ -75,18 +75,18 @@ function setup() {
     }
   }
   //Sound
-  // sound = createSprite(displayWidth * 21 / 25, displayHeight / 18, 30, 30);
-  // sound.addAnimation("on", soundIsOn);
-  // sound.addAnimation("off", soundIsOff);
-  // sound.changeAnimation("on");
-  // fullscreen.onMousePressed = function() {
-  //   if (sound.getAnimationLabel() == "off") {
-  //     this.changeAnimation("on");
-  //   }
-  //   else {
-  //     this.changeAnimation("off");
-  //   }
-  // }
+  sound = createSprite(displayWidth * 21 / 25, displayHeight / 18, 30, 30);
+  sound.addAnimation("on", soundIsOn);
+  sound.addAnimation("off", soundIsOff);
+  sound.changeAnimation("on");
+  fullscreen.onMousePressed = function() {
+    if (sound.getAnimationLabel() == "off") {
+      this.changeAnimation("on");
+    }
+    else {
+      this.changeAnimation("off");
+    }
+  }
 
 } // function setup
 
