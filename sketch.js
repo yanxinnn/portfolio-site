@@ -39,9 +39,9 @@ function preload() {
 //** Setup *************
 function setup() {
 
-	createCanvas(window.innerWidth, window.innerHeight);
-  var staticWindowWidth = window.innerWidth;
-  var staticWindowHeight = window.innerHeight;
+	createCanvas(displayWidth, displayHeight);
+  var staticWindowWidth = displayWidth;
+  var staticWindowHeight = displayHeight;
 
   // Player Animations
   playerIdle.frameDelay = 18;
@@ -52,7 +52,7 @@ function setup() {
   player.addAnimation("run", playerRun);
 
   // Widgets
-  widget = createSprite(window.innerWidth * 17 / 20, window.innerHeight / 15, 30, 30);
+  widget = createSprite(displayWidth * 19 / 20, displayHeight / 15, 30, 30);
   widget.addAnimation("isOff", fullscreenIsOff);
   widget.addAnimation("isOn", fullscreenIsOn);
   widget.onMousePressed = function() {
@@ -111,5 +111,10 @@ function draw() {
 } // function draw
 
 function windowResized() {
-  resizeCanvas(window.innerWidth, window.innerHeight);
+  if (fullscreen()) {
+    resizeCanvas(displayWidth, displayHeight);
+  }
+  else {
+    resizeCanvas(window.innerWidth, window.innerHeight);
+  }
 }
