@@ -50,7 +50,7 @@ function setup() {
   var staticWindowHeight = displayHeight;
 
   // Player Animations
-  playerIdle.frameDelay = 18;
+  playerIdle.frameDelay = 20;
   playerRun.frameDelay = 15;
 
   player = createSprite(staticWindowWidth/8, staticWindowHeight * 4 / 7, 100, 100);
