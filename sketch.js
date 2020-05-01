@@ -55,9 +55,16 @@ function setup() {
   widget = createSprite(displayWidth * 19 / 20, displayHeight / 15, 30, 30);
   widget.addAnimation("isOff", fullscreenIsOff);
   widget.addAnimation("isOn", fullscreenIsOn);
+  widget.changeAnimation("isOff");
   widget.onMousePressed = function() {
-    widget.changeAnimation("isOn");
-    console.log(widget.getAnimationLabel());
+    if (widget.getAnimationLabel() == "isOff") {
+      widget.changeAnimation("isOn");
+    }
+    else {
+      widget.getAnimation("isOn") {
+        widget.changeAnimation("isOff");
+      }
+    }
   }
 
 
