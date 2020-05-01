@@ -55,6 +55,7 @@ function setup() {
   widget.addAnimation("isOn", fullscreenIsOn);
   widget.onMousePressed = function() {
     widget.changeAnimation("isOn");
+    console.log(widget.getAnimationLabel());
   }
 
 
