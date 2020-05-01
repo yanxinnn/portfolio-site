@@ -45,7 +45,7 @@ function setup() {
   playerIdle.frameDelay = 18;
   playerRun.frameDelay = 15;
 
-  player = createSprite(window.innerWidth/8, window.innerHeight/5, 100, 100);
+  player = createSprite(window.innerWidth/8, window.innerHeight * 4 / 5, 100, 100);
   player.addAnimation("idle", playerIdle);
   player.addAnimation("run", playerRun);
 
