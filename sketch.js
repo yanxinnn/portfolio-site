@@ -64,8 +64,7 @@ function setup() {
       widget.changeAnimation("isOn");
     }
     else {
-        widget.changeAnimation("isOff");
-      }
+      widget.changeAnimation("isOff");
     }
   }
 
