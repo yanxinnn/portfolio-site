@@ -56,6 +56,9 @@ function setup() {
   widget.addAnimation("isOff", fullscreenIsOff);
   widget.addAnimation("isOn", fullscreenIsOn);
   widget.changeAnimation("isOff");
+  if (mouse.overlap(widget)) {
+    widget.tint(255, 126);
+  }
   widget.onMousePressed = function() {
     if (widget.getAnimationLabel() == "isOff") {
       widget.changeAnimation("isOn");
