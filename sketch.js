@@ -79,7 +79,7 @@ function setup() {
   sound.addAnimation("on", soundIsOn);
   sound.addAnimation("off", soundIsOff);
   sound.changeAnimation("on");
-  fullscreen.onMousePressed = function() {
+  sound.onMousePressed = function() {
     if (sound.getAnimationLabel() == "off") {
       this.changeAnimation("on");
     }
