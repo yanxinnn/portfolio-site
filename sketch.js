@@ -20,6 +20,10 @@ var fullscreen1 = "images/widgets/fullscreenIcon1.png";
 var fullscreen2 = "images/widgets/fullscreenIcon2.png";
 var fullscreenIsOff;
 var fullscreenIsOn;
+var sound1 = "images/widgets/sound1.png";
+var sound2 = "images/widgets/sound2.png";
+var soundIsOff;
+var soundIsOn;
 
 //** Preload *************
 function preload() {
@@ -33,6 +37,8 @@ function preload() {
   // Widgets
   fullscreenIsOff = loadImage(fullscreen1);
   fullscreenIsOn = loadImage(fullscreen2);
+  soundIsOn = loadImage(sound1);
+  soundIsOff = loadImage(sound2);
 
 }
 
@@ -52,19 +58,33 @@ function setup() {
   player.addAnimation("run", playerRun);
 
   // Widgets
-  widget = createSprite(displayWidth * 19 / 20, displayHeight / 15, 30, 30);
-  widget.addAnimation("isOff", fullscreenIsOff);
-  widget.addAnimation("isOn", fullscreenIsOn);
-  widget.changeAnimation("isOff");
+  //Fullscreen
+  fullscreen = createSprite(displayWidth * 23 / 25, displayHeight / 18, 30, 30);
+  fullscreen.addAnimation("isOff", fullscreenIsOff);
+  fullscreen.addAnimation("isOn", fullscreenIsOn);
+  fullscreen.changeAnimation("isOff");
   // widget.onMouseOver = function () {
   //   this.setAlpha(100);
   // }
-  widget.onMousePressed = function() {
-    if (widget.getAnimationLabel() == "isOff") {
+  fullscreen.onMousePressed = function() {
+    if (fullscreen.getAnimationLabel() == "isOff") {
       this.changeAnimation("isOn");
     }
     else {
       this.changeAnimation("isOff");
+    }
+  }
+  //Sound
+  sound = createSprite(displayWidth * 21 / 25, displayHeight / 18, 30, 30);
+  sound.addAnimation("on", soundIsOn);
+  sound.addAnimation("off", soundIsOff);
+  sound.changeAnimation("on");
+  fullscreen.onMousePressed = function() {
+    if (sound.getAnimationLabel() == "off") {
+      this.changeAnimation("on");
+    }
+    else {
+      this.changeAnimation("off");
     }
   }
 
