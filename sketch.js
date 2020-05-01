@@ -92,7 +92,7 @@ function setup() {
 
 //** Draw ****************
 function draw() {
-  console.log(fullscreen());
+  console.log(window.fullScreen);
 	background(skyBackground);
 	drawSprites();
 
