@@ -67,12 +67,12 @@ function setup() {
   fullscreen.changeAnimation("isOff");
   fullscreen.onMousePressed = function() {
     if (fullscreen.getAnimationLabel() == "isOff") {
-      this.changeAnimation("isOn");
       document.documentElement.requestFullscreen();
+      this.changeAnimation("isOn");
     }
     else {
       this.changeAnimation("isOff");
-      document.exitFullscreen();
+      //document.exitFullscreen();
     }
   }
 
