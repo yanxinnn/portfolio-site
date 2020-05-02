@@ -137,7 +137,12 @@ function draw() {
   // }
 
   // Widgets
-
+  if (!document.fullscreenElement) {
+    fullscreen.changeAnimation("isOff");
+  }
+  else {
+    fullscreen.changeAnimation("isOn");
+  }
 } // function draw
 
 function windowResized() {
