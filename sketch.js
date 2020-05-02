@@ -45,9 +45,9 @@ function preload() {
 //** Setup *************
 function setup() {
 
-	createCanvas(displayWidth, displayHeight);
-  var staticWindowWidth = displayWidth;
-  var staticWindowHeight = displayHeight;
+	createCanvas(window.innerWidth, window.innerHeight);
+  var staticWindowWidth = window.innerWidth;
+  var staticWindowHeight = window.innerHeight;
 
   // Player Animations
   playerIdle.frameDelay = 20;
@@ -59,7 +59,7 @@ function setup() {
 
   // Widgets
   //Fullscreen
-  fullscreen = createSprite(displayWidth * 23 / 25, displayHeight / 18, 30, 30);
+  fullscreen = createSprite(window.innerWidth * 23 / 25, window.innerHeight / 18, 30, 30);
   fullscreen.addAnimation("isOff", fullscreenIsOff);
   fullscreen.addAnimation("isOn", fullscreenIsOn);
   fullscreen.changeAnimation("isOff");
@@ -75,7 +75,7 @@ function setup() {
     }
   }
   //Sound
-  sound = createSprite(displayWidth * 21 / 25, displayHeight / 18, 30, 30);
+  sound = createSprite(window.innerWidth * 21 / 25, window.innerHeight / 18, 30, 30);
   sound.addAnimation("on", soundIsOn);
   sound.addAnimation("off", soundIsOff);
   sound.changeAnimation("on");
@@ -92,7 +92,6 @@ function setup() {
 
 //** Draw ****************
 function draw() {
-  console.log(window.fullScreen);
 	background(skyBackground);
 	drawSprites();
 
