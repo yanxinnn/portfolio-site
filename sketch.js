@@ -152,3 +152,9 @@ function draw() {
 function windowResized() {
   resizeCanvas(window.innerWidth, window.innerHeight);
 }
+
+var un_mute = document.getElementById('un-mute');
+
+un_mute.onclick = function() {
+   alert('toggle player here');
+};

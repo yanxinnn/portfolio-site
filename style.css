@@ -13,3 +13,19 @@ body {
 body {
 
 }
+
+input#un-mute {
+  display: none;
+}
+
+.unmute img {
+  display: none;
+}
+
+input#un-mute:checked ~ .unmute img {
+  display: initial;
+}
+
+input#un-mute:checked ~ .mute img {
+  display: none;
+}
