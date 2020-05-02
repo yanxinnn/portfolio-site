@@ -64,7 +64,7 @@ function setup() {
   fullscreen.addAnimation("isOff", fullscreenIsOff);
   fullscreen.addAnimation("isOn", fullscreenIsOn);
   fullscreen.changeAnimation("isOff");
-  widget.onMouseOver = function () {
+  fullscreen.onMouseOver = function () {
     tint(255, 126);
   }
   fullscreen.onMousePressed = function() {
