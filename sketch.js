@@ -16,15 +16,15 @@ var playerRun4 = "images/player/playerRun4.png";
 var playerRun;
 
 // Widgets
-var fullscreen1 = "images/widgets/fullscreenIcon1.png";
-var fullscreen2 = "images/widgets/fullscreenIcon2.png";
-var fullscreenIsOff;
-var fullscreenIsOn;
-var sound1 = "images/widgets/sound1.png";
-var sound2 = "images/widgets/sound2.png";
-var soundIsOff;
-var soundIsOn;
-var snd_windyPetals;
+// var fullscreen1 = "images/widgets/fullscreenIcon1.png";
+// var fullscreen2 = "images/widgets/fullscreenIcon2.png";
+// var fullscreenIsOff;
+// var fullscreenIsOn;
+// var sound1 = "images/widgets/sound1.png";
+// var sound2 = "images/widgets/sound2.png";
+// var soundIsOff;
+// var soundIsOn;
+// var snd_windyPetals;
 
 //** Preload *************
 function preload() {
@@ -36,11 +36,11 @@ function preload() {
   playerRun = loadAnimation(playerRun1, playerRun2, playerRun3, playerRun2, playerRun1, playerRun4, playerRun3, playerRun2);
 
   // Widgets
-  fullscreenIsOff = loadImage(fullscreen1);
-  fullscreenIsOn = loadImage(fullscreen2);
-  soundIsOn = loadImage(sound1);
-  soundIsOff = loadImage(sound2);
-  snd_windyPetals = loadSound("sounds/windyPetals.mp3");
+  // fullscreenIsOff = loadImage(fullscreen1);
+  // fullscreenIsOn = loadImage(fullscreen2);
+  // soundIsOn = loadImage(sound1);
+  // soundIsOff = loadImage(sound2);
+  // snd_windyPetals = loadSound("sounds/windyPetals.mp3");
 
 }
 
@@ -61,20 +61,20 @@ function setup() {
 
   // Widgets
   //Fullscreen
-  fullscreen = createSprite(window.innerWidth * 23 / 25, window.innerHeight / 18, 30, 30);
-  fullscreen.addAnimation("isOff", fullscreenIsOff);
-  fullscreen.addAnimation("isOn", fullscreenIsOn);
-  fullscreen.changeAnimation("isOff");
-  fullscreen.onMousePressed = function() {
-    if (fullscreen.getAnimationLabel() == "isOff") {
-      document.documentElement.requestFullscreen();
-      this.changeAnimation("isOn");
-    }
-    else {
-      this.changeAnimation("isOff");
-      //document.exitFullscreen();
-      }
-  }
+  // fullscreen = createSprite(window.innerWidth * 23 / 25, window.innerHeight / 18, 30, 30);
+  // fullscreen.addAnimation("isOff", fullscreenIsOff);
+  // fullscreen.addAnimation("isOn", fullscreenIsOn);
+  // fullscreen.changeAnimation("isOff");
+  // fullscreen.onMousePressed = function() {
+  //   if (fullscreen.getAnimationLabel() == "isOff") {
+  //     document.documentElement.requestFullscreen();
+  //     this.changeAnimation("isOn");
+  //   }
+  //   else {
+  //     this.changeAnimation("isOff");
+  //     //document.exitFullscreen();
+  //     }
+  // }
 
   // fullscreen.onMouseOver = function () {
   //   tint(255, 126);
@@ -82,20 +82,20 @@ function setup() {
 
 
   //Sound
-  sound = createSprite(window.innerWidth * 21 / 25, window.innerHeight / 18, 30, 30);
-  sound.addAnimation("on", soundIsOn);
-  sound.addAnimation("off", soundIsOff);
-  sound.changeAnimation("on");
-  sound.onMousePressed = function() {
-    if (sound.getAnimationLabel() == "off") {
-      this.changeAnimation("on");
-      snd_windyPetals.loop();
-    }
-    else {
-      this.changeAnimation("off");
-      snd_windyPetals.stop();
-    }
-  }
+  // sound = createSprite(window.innerWidth * 21 / 25, window.innerHeight / 18, 30, 30);
+  // sound.addAnimation("on", soundIsOn);
+  // sound.addAnimation("off", soundIsOff);
+  // sound.changeAnimation("on");
+  // sound.onMousePressed = function() {
+  //   if (sound.getAnimationLabel() == "off") {
+  //     this.changeAnimation("on");
+  //     snd_windyPetals.loop();
+  //   }
+  //   else {
+  //     this.changeAnimation("off");
+  //     snd_windyPetals.stop();
+  //   }
+  // }
 
 } // function setup
 
@@ -141,12 +141,12 @@ function draw() {
   // }
 
   // Widgets
-  if (!document.fullscreenElement) {
-    fullscreen.changeAnimation("isOff");
-  }
-  else {
-    fullscreen.changeAnimation("isOn");
-  }
+  // if (!document.fullscreenElement) {
+  //   fullscreen.changeAnimation("isOff");
+  // }
+  // else {
+  //   fullscreen.changeAnimation("isOn");
+  // }
 } // function draw
 
 function windowResized() {
