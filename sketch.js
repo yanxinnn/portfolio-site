@@ -66,16 +66,7 @@ function setup() {
   // fullscreen.onMouseOver = function () {
   //   tint(255, 126);
   // }
-  fullscreen.onMousePressed = function() {
-    if (fullscreen.getAnimationLabel() == "isOff") {
-      this.changeAnimation("isOn");
-      document.documentElement.requestFullscreen();
-    }
-    else {
-      this.changeAnimation("isOff");
-      document.exitFullscreen();
-    }
-  }
+
   //Sound
   sound = createSprite(window.innerWidth * 21 / 25, window.innerHeight / 18, 30, 30);
   sound.addAnimation("on", soundIsOn);
@@ -134,6 +125,16 @@ function draw() {
   // }
 
   // Widgets
+  fullscreen.onMousePressed = function() {
+    if (fullscreen.getAnimationLabel() == "isOff") {
+      this.changeAnimation("isOn");
+      document.documentElement.requestFullscreen();
+    }
+    else {
+      this.changeAnimation("isOff");
+      document.exitFullscreen();
+    }
+  }
 
 } // function draw
 
