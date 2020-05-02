@@ -66,14 +66,14 @@ function setup() {
   fullscreen.addAnimation("isOn", fullscreenIsOn);
   fullscreen.changeAnimation("isOff");
   fullscreen.onMousePressed = function() {
-  if (fullscreen.getAnimationLabel() == "isOff") {
-    document.documentElement.requestFullscreen();
-    this.changeAnimation("isOn");
-  }
-  else {
-    this.changeAnimation("isOff");
-    //document.exitFullscreen();
+    if (fullscreen.getAnimationLabel() == "isOff") {
+      document.documentElement.requestFullscreen();
+      this.changeAnimation("isOn");
     }
+    else {
+      this.changeAnimation("isOff");
+      //document.exitFullscreen();
+      }
   }
 
   // fullscreen.onMouseOver = function () {
@@ -89,12 +89,13 @@ function setup() {
   sound.onMousePressed = function() {
     if (sound.getAnimationLabel() == "off") {
       this.changeAnimation("on");
+      snd_windyPetals.loop();
     }
     else {
       this.changeAnimation("off");
+      snd_windyPetals.stop();
     }
   }
-  snd_windyPetals.loop();
 
 } // function setup
 
