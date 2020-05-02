@@ -24,7 +24,7 @@ var playerRun;
 // var sound2 = "images/widgets/sound2.png";
 // var soundIsOff;
 // var soundIsOn;
-// var snd_windyPetals;
+var snd_windyPetals;
 
 //** Preload *************
 function preload() {
@@ -40,7 +40,7 @@ function preload() {
   // fullscreenIsOn = loadImage(fullscreen2);
   // soundIsOn = loadImage(sound1);
   // soundIsOff = loadImage(sound2);
-  // snd_windyPetals = loadSound("sounds/windyPetals.mp3");
+  snd_windyPetals = loadSound("sounds/windyPetals.mp3");
 
 }
 
@@ -156,5 +156,5 @@ function windowResized() {
 var un_mute = document.getElementById('un-mute');
 
 un_mute.onclick = function() {
-   alert('toggle player here');
+   snd_windyPetals.loop();
 };
