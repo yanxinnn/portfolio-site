@@ -67,7 +67,7 @@ function setup() {
     tint(255, 126);
   }
   else {
-    tint(255, 255);
+    tint(255, 200);
   }
   fullscreen.onMousePressed = function() {
     if (fullscreen.getAnimationLabel() == "isOff") {
