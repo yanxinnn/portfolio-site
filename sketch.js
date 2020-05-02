@@ -133,9 +133,10 @@ function draw() {
 
   // Widgets
 
-
 } // function draw
 
 function windowResized() {
   resizeCanvas(window.innerWidth, window.innerHeight);
+  sound.x = window.innerWidth * 21 / 25;
+  sound.y = window.innerHeight / 18;
 }
