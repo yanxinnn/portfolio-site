@@ -125,6 +125,7 @@ function draw() {
   // }
 
   // Widgets
+  if ()
   fullscreen.onMousePressed = function() {
     if (fullscreen.getAnimationLabel() == "isOff") {
       this.changeAnimation("isOn");
@@ -132,16 +133,12 @@ function draw() {
     }
     else {
       this.changeAnimation("isOff");
-      document.exitFullscreen();
+      document.documentElement.exitFullscreen();
     }
   }
 
 } // function draw
 
 function windowResized() {
-  console.log(sound.x);
-  console.log(sound.y);
   resizeCanvas(window.innerWidth, window.innerHeight);
-  sound.x = window.innerWidth * 21 / 25;
-  sound.y = window.innerHeight / 18;
 }
