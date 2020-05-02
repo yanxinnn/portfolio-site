@@ -70,7 +70,7 @@ function setup() {
     }
     else {
       this.changeAnimation("isOff");
-      document.documentElement.exitFullscreen();
+      document.exitFullscreen();
     }
   }
 
