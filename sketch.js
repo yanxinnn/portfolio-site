@@ -67,12 +67,13 @@ function setup() {
   //   tint(255, 126);
   // }
   fullscreen.onMousePressed = function() {
-    document.documentElement.requestFullscreen();
     if (fullscreen.getAnimationLabel() == "isOff") {
       this.changeAnimation("isOn");
+      document.documentElement.requestFullscreen();
     }
     else {
       this.changeAnimation("isOff");
+      document.exitFullscreen();
     }
   }
   //Sound
