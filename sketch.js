@@ -24,6 +24,7 @@ var sound1 = "images/widgets/sound1.png";
 var sound2 = "images/widgets/sound2.png";
 var soundIsOff;
 var soundIsOn;
+var snd_windyPetals;
 
 //** Preload *************
 function preload() {
@@ -39,6 +40,7 @@ function preload() {
   fullscreenIsOn = loadImage(fullscreen2);
   soundIsOn = loadImage(sound1);
   soundIsOff = loadImage(sound2);
+  snd_windyPetals = loadSound("sounds/windyPetals.mp3");
 
 }
 
@@ -92,6 +94,7 @@ function setup() {
       this.changeAnimation("off");
     }
   }
+  snd_windyPetals.loop();
 
 } // function setup
 
