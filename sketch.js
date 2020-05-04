@@ -54,6 +54,7 @@ function setup() {
 //** Draw ****************
 function draw() {
 	background(skyBackground);
+  console.log("done");
 	drawSprites();
 
   player.changeAnimation("idle");
