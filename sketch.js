@@ -102,7 +102,9 @@ function draw() {
   //   player.velocity.y = 5.5;
   // }
 
-  // Widgets
+  player.collide(ground);
+  player.debug = mouseIsPressed;
+  ground.debug = mouseIsPressed;
 
 } // function draw
 
