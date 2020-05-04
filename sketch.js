@@ -35,6 +35,7 @@ function preload() {
   // Widgets
   snd_windyPetals = loadSound("sounds/windyPetals.mp3");
 
+  // Environment
   grass = loadImage("images/environment/grass.png");
   dirt = loadImage("images/environment/dirt.png");
 
