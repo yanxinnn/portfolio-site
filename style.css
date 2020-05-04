@@ -17,6 +17,11 @@ body {
 input#un-mute {
   margin: 0;
   display: none;
+  opacity: 0.65;
+}
+
+input#un-mute:hover {
+  opacity: 0.85;
 }
 
 .unmute img {
