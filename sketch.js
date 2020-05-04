@@ -18,6 +18,9 @@ var playerRun;
 // Widgets
 var snd_windyPetals;
 
+// Environment
+var grass;
+
 //** Preload *************
 function preload() {
 
@@ -47,7 +50,11 @@ function setup() {
   player.addAnimation("idle", playerIdle);
   player.addAnimation("run", playerRun);
 
-  // Widgets
+  // Environment
+  for (i = 0; i < 5; ++i) {
+    grass = createSprite(staticWindowWidth/9 + (i * 30), staticWindowHeight * 6 / 7, 30, 30);
+    grass.addAnimation("images/environment/grass.png");
+  }
 
 } // function setup
 
