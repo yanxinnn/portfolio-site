@@ -100,9 +100,9 @@ function windowResized() {
   resizeCanvas(window.innerWidth, window.innerHeight);
 }
 
-var un_mute = document.getElementById('un-mute');
-un_mute.onclick = function() {
-  if (un_mute.checked) {
+var sound = document.getElementById('sound');
+sound.onclick = function() {
+  if (sound.checked) {
     snd_windyPetals.loop();
   }
   else {

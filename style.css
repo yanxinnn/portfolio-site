@@ -14,26 +14,36 @@ body {
 
 }
 
-input#un-mute {
+input#sound {
   margin: 0;
   display: none;
 }
 
-.unmute img {
+.sound img {
+  margin: 0;
+  opacity: 0.65;
+}
+
+.sound img:hover{
+  opacity: 1;
+  cursor: pointer;
+}
+
+.sound img {
   margin: 0;
   display: none;
   opacity: 0.65;
 }
 
-.unmute img:hover {
+.sound img:hover {
   opacity: 0.9;
   cursor: pointer;
 }
 
-input#un-mute:checked ~ .unmute img {
+input#sound:checked ~ .on img {
   display: initial;
 }
 
-input#un-mute:checked ~ .mute img {
+input#sound:checked ~ .off img {
   display: none;
 }
