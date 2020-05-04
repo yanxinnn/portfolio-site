@@ -15,19 +15,9 @@ body {
 }
 
 /* Mute / Unmute Widget */
-input#un-mute {
+input#sound {
   margin: 0;
   display: none;
-}
-
-.off img {
-  margin: 0;
-  opacity: 0.65;
-}
-
-.off img:hover{
-  opacity: 1;
-  cursor: pointer;
 }
 
 .on img {
@@ -41,10 +31,20 @@ input#un-mute {
   cursor: pointer;
 }
 
-input#un-mute:checked ~ .on img {
+.off img {
+  margin: 0;
+  opacity: 0.65;
+}
+
+.off img:hover{
+  opacity: 1;
+  cursor: pointer;
+}
+
+input#sound:checked ~ .on img {
   display: initial;
 }
 
-input#un-mute:checked ~ .off img {
+input#sound:checked ~ .off img {
   display: none;
 }
