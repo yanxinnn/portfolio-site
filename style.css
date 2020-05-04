@@ -19,23 +19,23 @@ input#sound {
   display: none;
 }
 
-.sound img {
+.on img {
   margin: 0;
   opacity: 0.65;
 }
 
-.sound img:hover{
+.on img:hover{
   opacity: 1;
   cursor: pointer;
 }
 
-.sound img {
+.off img {
   margin: 0;
   display: none;
   opacity: 0.65;
 }
 
-.sound img:hover {
+.off img:hover {
   opacity: 0.9;
   cursor: pointer;
 }
