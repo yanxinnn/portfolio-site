@@ -52,7 +52,7 @@ function setup() {
 
   // Environment
   for (i = 0; i < 5; ++i) {
-    grass = createSprite(staticWindowWidth/9 + (i * 100), staticWindowHeight * 6 / 7, 100, 100);
+    grass = createSprite(staticWindowWidth/9 + (i * 100), staticWindowHeight * 5 / 7, 100, 100);
     grass.addAnimation("images/environment/grass.png");
   }
 
