@@ -29,18 +29,18 @@ input#un-mute {
   cursor: pointer;
 }
 
-.unmute img {
+.on img {
   margin: 0;
   display: none;
   opacity: 0.65;
 }
 
-.unmute img:hover {
+.on img:hover {
   opacity: 0.9;
   cursor: pointer;
 }
 
-input#un-mute:checked ~ .unmute img {
+input#:checked ~ .on img {
   display: initial;
 }
 
