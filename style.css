@@ -14,7 +14,7 @@ body {
 
 }
 
-input#sound {
+input#un-mute {
   margin: 0;
   display: none;
 }
@@ -40,10 +40,10 @@ input#sound {
   cursor: pointer;
 }
 
-input#sound:checked ~ .unmute img {
+input#un-mute:checked ~ .unmute img {
   display: initial;
 }
 
-input#sound:checked ~ .mute img {
+input#un-mute:checked ~ .mute img {
   display: none;
 }
