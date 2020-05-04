@@ -82,8 +82,6 @@ function draw() {
     player.mirrorX(-1);
   }
   player.velocity.x = 0;
-  player.velocity.y += 0.3;
-
   if (keyIsDown(RIGHT_ARROW) || keyIsDown(68)) {
     lastKey = "right";
     player.changeAnimation("run");
@@ -98,14 +96,15 @@ function draw() {
     player.changeAnimation("idle");
     player.velocity.y = 5;
   }
-  // else if (keyIsDown(UP_ARROW) || keyIsDown(87)) {
-  //   player.changeAnimation("run");
-  //   player.velocity.y = -5.5;
-  // }
-  // else if (keyIsDown(DOWN_ARROW) || keyIsDown(83)) {
-  //   player.changeAnimation("run");
-  //   player.velocity.y = 5.5;
-  // }
+
+  // Player Ground Collision
+  if (ground.overlapPixel(player.position.x, player.position.y+100)==false) {
+    player.velocity.y += 0.5;
+  }
+  while (ground.overlapPixel(player.position.x, player.position.y+100)) {
+   player.position.y--;
+   player.velocity.y = 0;
+ }
 
 } // function draw
 
