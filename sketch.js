@@ -19,6 +19,7 @@ var playerRun;
 var snd_windyPetals;
 
 // Environment
+var ground;
 var grass;
 
 //** Preload *************
@@ -32,6 +33,8 @@ function preload() {
 
   // Widgets
   snd_windyPetals = loadSound("sounds/windyPetals.mp3");
+
+  grass = loadAnimation("images/environment/grass.png");
 
 }
 
@@ -52,8 +55,8 @@ function setup() {
 
   // Environment
   for (i = 0; i < 5; ++i) {
-    grass = createSprite(staticWindowWidth/9 + (i * 100), staticWindowHeight * 5 / 7, 100, 100);
-    grass.addAnimation("images/environment/grass.png");
+    ground = createSprite(staticWindowWidth/9 + (i * 100), staticWindowHeight * 5 / 7, 100, 100);
+    ground.addAnimation("grass", grass);
   }
 
 } // function setup
