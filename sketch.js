@@ -57,11 +57,11 @@ function setup() {
   // Environment
   for (i = 0; i < 10; ++i) {
     ground = createSprite(i * 100, window.innerHeight - 200, 100, 100);
-    ground.addAnimation("grass", grass);
+    ground.addImage(grass);
   }
   for (i = 0; i < 10; ++i) {
     ground = createSprite(i * 100, window.innerHeight - 100, 100, 100);
-    ground.addAnimation("dirt", dirt);
+    ground.addImage(dirt);
   }
 
 } // function setup
@@ -94,7 +94,7 @@ function draw() {
     player.changeAnimation("run");
     player.velocity.x = -5;
   }
-  else if (keyIsDown(UP_ARROW) || keyIsDown(87)) { 
+  else if (keyIsDown(UP_ARROW) || keyIsDown(87)) {
     player.changeAnimation("idle");
     player.velocity.y = 5;
   }
@@ -106,8 +106,6 @@ function draw() {
   //   player.changeAnimation("run");
   //   player.velocity.y = 5.5;
   // }
-
-  player.collide(ground);
 
 } // function draw
 
