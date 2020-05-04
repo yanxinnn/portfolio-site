@@ -58,12 +58,12 @@ function setup() {
 
   // Environment
   platforms = new Group();
-  for (i = 0; i < 10; ++i) {
+  for (i = 0; i < 15; ++i) {
     ground = createSprite(i * 100, window.innerHeight - 200, 100, 100);
     ground.addAnimation("grass", grass);
     ground.addToGroup(platforms);
   }
-  for (i = 0; i < 10; ++i) {
+  for (i = 0; i < 15; ++i) {
     ground = createSprite(i * 100, window.innerHeight - 100, 100, 100);
     ground.addAnimation("dirt", dirt);
     ground.addToGroup(platforms);
