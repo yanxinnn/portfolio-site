@@ -45,23 +45,22 @@ function setup() {
 
 	createCanvas(window.innerWidth, window.innerHeight);
   var staticWindowWidth = window.innerWidth;
-  var staticWindowHeight = window.innerHeight;
 
   // Player Animations
   playerIdle.frameDelay = 20;
   playerRun.frameDelay = 15;
 
-  player = createSprite(staticWindowWidth/8, staticWindowHeight * 4 / 7, 100, 100);
+  player = createSprite(staticWindowWidth/8, window.innerHeight * 4 / 7, 100, 100);
   player.addAnimation("idle", playerIdle);
   player.addAnimation("run", playerRun);
 
   // Environment
   for (i = 0; i < 10; ++i) {
-    ground = createSprite(i * 100, staticWindowHeight - 200, 100, 100);
+    ground = createSprite(i * 100, window.innerHeight - 200, 100, 100);
     ground.addAnimation("grass", grass);
   }
   for (i = 0; i < 10; ++i) {
-    ground = createSprite(i * 100, staticWindowHeight - 100, 100, 100);
+    ground = createSprite(i * 100, window.innerHeight - 100, 100, 100);
     ground.addAnimation("dirt", dirt);
   }
 
