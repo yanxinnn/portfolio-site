@@ -154,7 +154,11 @@ function windowResized() {
 }
 
 var un_mute = document.getElementById('un-mute');
-
 un_mute.onclick = function() {
-   snd_windyPetals.loop();
+  if (un_mute.checked) {
+    snd_windyPetals.loop();
+  }
+  else {
+    snd_windyPetals.stop();
+  }
 };
