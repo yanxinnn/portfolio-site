@@ -101,7 +101,7 @@ function setup() {
 
 //** Draw ****************
 function draw() {
-	background(skyBackground);
+	document.body.style.backgroundImage = "url(skyBackground)";
 	drawSprites();
 
   player.changeAnimation("idle");
