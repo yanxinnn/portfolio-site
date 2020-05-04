@@ -100,7 +100,7 @@ function windowResized() {
   resizeCanvas(window.innerWidth, window.innerHeight);
 }
 
-var sound = document.getElementById('sound');
+var sound = document.getElementById('un-mute');
 sound.onclick = function() {
   if (sound.checked) {
     snd_windyPetals.loop();
