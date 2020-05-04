@@ -35,8 +35,8 @@ function preload() {
   // Widgets
   snd_windyPetals = loadSound("sounds/windyPetals.mp3");
 
-  grass = loadAnimation("images/environment/grass.png");
-  dirt = loadAnimation("images/environment/dirt.png");
+  grass = loadImage("images/environment/grass.png");
+  dirt = loadImage("images/environment/dirt.png");
 
 }
 
@@ -68,10 +68,8 @@ function setup() {
 
 //** Draw ****************
 function draw() {
-  
-	background(skyBackground);
 
-  player.changeAnimation("idle");
+	background(skyBackground);
 
   // Player Movements
   player.changeAnimation("idle");
