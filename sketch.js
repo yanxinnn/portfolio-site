@@ -21,6 +21,7 @@ var snd_windyPetals;
 // Environment
 var ground;
 var grass;
+var dirt;
 
 //** Preload *************
 function preload() {
@@ -35,6 +36,7 @@ function preload() {
   snd_windyPetals = loadSound("sounds/windyPetals.mp3");
 
   grass = loadAnimation("images/environment/grass.png");
+  dirt = loadAnimation("images/environment/dirt.png");
 
 }
 
@@ -54,9 +56,13 @@ function setup() {
   player.addAnimation("run", playerRun);
 
   // Environment
-  for (i = 0; i < 5; ++i) {
-    ground = createSprite(staticWindowWidth/9 + (i * 100), staticWindowHeight * 5 / 7, 100, 100);
+  for (i = 0; i < 10; ++i) {
+    ground = createSprite(i * 100, staticWindowHeight - 200, 100, 100);
     ground.addAnimation("grass", grass);
+  }
+  for (i = 0; i < 10; ++i) {
+    ground = createSprite(i * 100, staticWindowHeight - 100, 100, 100);
+    ground.addAnimation("dirt", dirt);
   }
 
 } // function setup
@@ -103,8 +109,6 @@ function draw() {
   // }
 
   player.collide(ground);
-  player.debug = mouseIsPressed;
-  ground.debug = mouseIsPressed;
 
 } // function draw
 
