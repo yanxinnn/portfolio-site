@@ -15,10 +15,12 @@ body {
 }
 
 input#un-mute {
+  margin: 0;
   display: none;
 }
 
 .unmute img {
+  margin: 0;
   display: none;
 }
 
