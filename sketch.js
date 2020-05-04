@@ -68,8 +68,8 @@ function setup() {
 
 //** Draw ****************
 function draw() {
+  
 	background(skyBackground);
-	drawSprites();
 
   player.changeAnimation("idle");
 
@@ -105,6 +105,8 @@ function draw() {
    player.position.y--;
    player.velocity.y = 0;
  }
+
+ drawSprites();
 
 } // function draw
 
