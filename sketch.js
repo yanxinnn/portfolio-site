@@ -94,7 +94,7 @@ function draw() {
     player.changeAnimation("run");
     player.velocity.x = -5;
   }
-  else if (keyIsDown(UP_ARROW) || keyIsDown(32)) { // spacebar jump
+  else if (keyIsDown(UP_ARROW) || keyIsDown(87)) { 
     player.changeAnimation("idle");
     player.velocity.y = 5;
   }
