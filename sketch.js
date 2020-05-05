@@ -47,7 +47,6 @@ function setup() {
 
 	createCanvas(window.innerWidth, window.innerHeight);
   var staticWindowWidth = window.innerWidth;
-  drawSprites();
 
   // Player Animations
   playerIdle.frameDelay = 20;
@@ -113,6 +112,7 @@ function draw() {
 
  // drawSprites(platforms);
  // drawSprites(player);
+ drawSprites();
 
 } // function draw
 
