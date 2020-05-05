@@ -47,6 +47,7 @@ function setup() {
 
 	createCanvas(window.innerWidth, window.innerHeight);
   var staticWindowWidth = window.innerWidth;
+  drawSprites();
 
   // Player Animations
   playerIdle.frameDelay = 20;
@@ -56,8 +57,7 @@ function setup() {
   player.addAnimation("idle", playerIdle);
   player.addAnimation("run", playerRun);
 
-  // Environment
-  var platformsAcross = (staticWindowWidth / 100) + 1;
+  var platformsAcross = Math.floor((staticWindowWidth / 100)) + 1;
   platforms = new Group();
   for (i = 0; i < platformsAcross; ++i) {
     ground = createSprite(i * 100, window.innerHeight - 200, 100, 100);
@@ -111,8 +111,8 @@ function draw() {
  //   player.velocity.y = 0;
  // }
 
- drawSprites(platforms);
- drawSprites(player);
+ // drawSprites(platforms);
+ // drawSprites(player);
 
 } // function draw
 
