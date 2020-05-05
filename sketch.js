@@ -108,9 +108,9 @@ function draw() {
   }
   if (jump) {
     player.changeAnimation("idle");
-    player.velocity.y += 0.5;
+    player.velocity.y += 0.85;
   }
-  while (groundTop.overlapPixel(player.position.x, player.position.y)) {
+  if (groundTop.overlapPixel(player.position.x, player.position.y+100)) {
     player.position.y--;
     player.velocity.y = 0;
     jump = false;
