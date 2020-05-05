@@ -111,7 +111,7 @@ function draw() {
     player.velocity.y += 0.95;
   }
   for (var i = 0; i < platforms.length; i++) {
-    if (platforms[i].overlapPixel(player.position.x, player.position.y+70)) {
+    if (platforms[i].overlapPixel(player.position.x, player.position.y+50)) {
       player.position.y--;
       player.velocity.y = 0;
       jump = false;
