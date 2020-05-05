@@ -110,7 +110,7 @@ function draw() {
     player.changeAnimation("idle");
     player.velocity.y += 5;
   }
-  if ((player.position.y + 100).collide(groundTop)) {
+  if ((player.position.y).collide(groundTop)) {
     player.velocity.y = 0;
     jump = false;
   }
