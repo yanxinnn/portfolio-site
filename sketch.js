@@ -92,12 +92,12 @@ function draw() {
   if (keyIsDown(RIGHT_ARROW) || keyIsDown(68)) {
     lastKey = "right";
     player.changeAnimation("run");
-    player.velocity.x = 5;
+    player.velocity.x = 5.5;
   }
   else if (keyIsDown(LEFT_ARROW) || keyIsDown(65)) {
     lastKey = "left";
     player.changeAnimation("run");
-    player.velocity.x = -5;
+    player.velocity.x = -5.5;
   }
   if (keyIsDown(UP_ARROW) || keyIsDown(87)) {
     if (!jump) {
@@ -108,7 +108,7 @@ function draw() {
   }
   if (jump) {
     player.changeAnimation("run");
-    player.velocity.y += 0.95;
+    player.velocity.y += 0.9;
   }
   for (var i = 0; i < platforms.length; i++) {
     if (platforms[i].overlapPixel(player.position.x, player.position.y+50)) {
