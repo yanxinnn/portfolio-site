@@ -37,8 +37,8 @@ function preload() {
   snd_windyPetals = loadSound("sounds/windyPetals.mp3");
 
   // Environment
-  grass = loadAnimation("images/environment/grass.png");
-  dirt = loadAnimation("images/environment/dirt.png");
+  // grass = loadAnimation("images/environment/grass.png");
+  // dirt = loadAnimation("images/environment/dirt.png");
 
 }
 
@@ -52,23 +52,22 @@ function setup() {
   playerIdle.frameDelay = 20;
   playerRun.frameDelay = 15;
 
-  // player = createSprite(staticWindowWidth/8, window.innerHeight - 300, 100, 100);
-  player = createSprite(200, 400, 100, 100);
+  player = createSprite(staticWindowWidth/8, window.innerHeight - 300, 100, 100);
   player.addAnimation("idle", playerIdle);
   player.addAnimation("run", playerRun);
 
   // Environment
-  platforms = new Group();
-  for (i = 0; i < 18; ++i) {
-    ground = createSprite(i * 100, window.innerHeight - 200, 100, 100);
-    ground.addAnimation("grass", grass);
-    ground.addToGroup(platforms);
-  }
-  for (i = 0; i < 18; ++i) {
-    ground = createSprite(i * 100, window.innerHeight - 100, 100, 100);
-    ground.addAnimation("dirt", dirt);
-    ground.addToGroup(platforms);
-  }
+  // platforms = new Group();
+  // for (i = 0; i < 18; ++i) {
+  //   ground = createSprite(i * 100, window.innerHeight - 200, 100, 100);
+  //   ground.addAnimation("grass", grass);
+  //   ground.addToGroup(platforms);
+  // }
+  // for (i = 0; i < 18; ++i) {
+  //   ground = createSprite(i * 100, window.innerHeight - 100, 100, 100);
+  //   ground.addAnimation("dirt", dirt);
+  //   ground.addToGroup(platforms);
+  // }
 
 } // function setup
 
