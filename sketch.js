@@ -20,6 +20,8 @@ var snd_windyPetals;
 
 // Environment
 var platforms;
+var groundTop;
+var groundBot;
 var grass;
 var dirt;
 
@@ -58,12 +60,12 @@ function setup() {
   var platformsAcross = Math.floor((staticWindowWidth / 100)) + 1;
   platforms = new Group();
   for (i = 0; i < platformsAcross; ++i) {
-    var groundTop = createSprite(i * 100, window.innerHeight - 200, 100, 100);
+    groundTop = createSprite(i * 100, window.innerHeight - 200, 100, 100);
     groundTop.addAnimation("grass", grass);
     platforms.add(groundTop);
   }
   for (i = 0; i < platformsAcross; ++i) {
-    var groundBot = createSprite(i * 100, window.innerHeight - 100, 100, 100);
+    groundBot = createSprite(i * 100, window.innerHeight - 100, 100, 100);
     groundBot.addAnimation("dirt", dirt);
     platforms.add(groundBot);
   }
