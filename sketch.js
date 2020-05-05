@@ -14,6 +14,7 @@ var playerRun2 = "images/player/playerRun2.png";
 var playerRun3 = "images/player/playerRun3.png";
 var playerRun4 = "images/player/playerRun4.png";
 var playerRun;
+var jump = false;
 
 // Widgets
 var snd_windyPetals;
@@ -78,7 +79,9 @@ function draw() {
   background(skyBackground);
 
   // Player Movements
-  player.changeAnimation("idle");
+  if (!jump) {
+    player.changeAnimation("idle");
+  }
   player.velocity.x = 0;
   if (lastKey == "right") {
     player.mirrorX(1);
@@ -98,11 +101,20 @@ function draw() {
   }
   else if (keyIsDown(UP_ARROW) || keyIsDown(87)) {
     player.changeAnimation("idle");
-    player.velocity.y = -5;
+    if (!jump) {
+      jump = true;
+      player.velocity.y = -8;
+    }
   }
-
-  player.collide(groundTop);
-
+  if (jump) {
+    player.changeAnimation("idle");
+    player.velocity.y += 5;
+  }
+  if (player.position.y + 100.collide(groundTop)) {
+    player.velocity.y = 0;
+    jump = false;
+  }
+  
   drawSprites();
 
 } // function draw
