@@ -76,6 +76,7 @@ function draw() {
 
 	background(skyBackground);
   drawSprites();
+  console.log("done");
 
   // Player Movements
   player.changeAnimation("idle");
