@@ -19,7 +19,6 @@ var playerRun;
 var snd_windyPetals;
 
 // Environment
-var ground;
 var platforms;
 var grass;
 var dirt;
@@ -59,14 +58,14 @@ function setup() {
   var platformsAcross = Math.floor((staticWindowWidth / 100)) + 1;
   platforms = new Group();
   for (i = 0; i < platformsAcross; ++i) {
-    ground = createSprite(i * 100, window.innerHeight - 200, 100, 100);
-    ground.addAnimation("grass", grass);
-    ground.addToGroup(platforms);
+    var groundTop = createSprite(i * 100, window.innerHeight - 200, 100, 100);
+    groundTop.addAnimation("grass", grass);
+    platforms.add(groundTop);
   }
   for (i = 0; i < platformsAcross; ++i) {
-    ground = createSprite(i * 100, window.innerHeight - 100, 100, 100);
-    ground.addAnimation("dirt", dirt);
-    ground.addToGroup(platforms);
+    var groundBot = createSprite(i * 100, window.innerHeight - 100, 100, 100);
+    groundBot.addAnimation("dirt", dirt);
+    platforms.add(groundBot);
   }
 
 } // function setup
@@ -74,7 +73,7 @@ function setup() {
 //** Draw ****************
 function draw() {
 
-	background(skyBackground);
+  background(skyBackground);
 
   // Player Movements
   player.changeAnimation("idle");
@@ -96,23 +95,21 @@ function draw() {
     player.changeAnimation("run");
     player.velocity.x = -5;
   }
- //  else if (keyIsDown(UP_ARROW) || keyIsDown(87)) {
- //    player.changeAnimation("idle");
- //    player.velocity.y = 5;
- //  }
- //
-  // Player Ground Collision
- //  if (ground.overlapPixel(player.position.x, player.position.y+100)==false) {
- //    player.velocity.y += 0.5;
- //  }
- //  while (ground.overlapPixel(player.position.x, player.position.y+100)) {
- //   player.position.y--;
- //   player.velocity.y = 0;
- // }
+  else if (keyIsDown(UP_ARROW) || keyIsDown(87)) {
+    player.changeAnimation("idle");
+    player.velocity.y = -5;
+  }
 
- // drawSprites(platforms);
- // drawSprites(player);
- drawSprites();
+  // Player Ground Collision
+  if (ground.overlapPixel(player.position.x, player.position.y+100)==false) {
+    player.velocity.y += 0.5;
+  }
+  while (ground.overlapPixel(player.position.x, player.position.y+100)) {
+    player.position.y--;
+    player.velocity.y = 0;
+  }
+
+  drawSprites();
 
 } // function draw
 
