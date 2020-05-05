@@ -102,7 +102,7 @@ function draw() {
   if (keyIsDown(UP_ARROW) || keyIsDown(87)) {
     if (!jump) {
       player.changeAnimation("idle");
-      player.velocity.y = -8;
+      player.velocity.y = -15;
       jump = true;
     }
   }
@@ -110,11 +110,11 @@ function draw() {
     player.changeAnimation("idle");
     player.velocity.y += 0.5;
   }
-  // while (groundTop.overlapPixel(player.position.x, player.position.y+100)) {
-  //   player.position.y--;
-  //   player.velocity.y = 0;
-  //   jump = false;
-  // }
+  while (groundTop.overlapPixel(player.position.x, player.position.y)) {
+    player.position.y--;
+    player.velocity.y = 0;
+    jump = false;
+  }
 
   drawSprites();
 
