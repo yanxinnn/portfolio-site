@@ -110,7 +110,7 @@ function draw() {
   }
   if (jump) {
     player.changeAnimation("run");
-    player.velocity.y += 0.8;
+    player.velocity.y += 0.9;
     jumps += 1;
   }
   for (var i = 0; i < platforms.length; i++) {
