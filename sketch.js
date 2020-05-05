@@ -101,14 +101,7 @@ function draw() {
     player.velocity.y = -5;
   }
 
-  // Player Ground Collision
-  if (groundTop.overlapPixel(player.position.x, player.position.y+100)==false) {
-    player.velocity.y += 0.5;
-  }
-  while (groundTop.overlapPixel(player.position.x, player.position.y+100)) {
-    player.position.y--;
-    player.velocity.y = 0;
-  }
+  player.collide(groundTop);
 
   drawSprites();
 
