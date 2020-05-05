@@ -54,19 +54,19 @@ function setup() {
   playerIdle.frameDelay = 20;
   playerRun.frameDelay = 15;
 
-  player = createSprite(staticWindowWidth/8, window.innerHeight - 300, 100, 100);
+  player = createSprite(staticWindowWidth/8, window.innerHeight-300, 100, 100);
   player.addAnimation("idle", playerIdle);
   player.addAnimation("run", playerRun);
 
   var platformsAcross = Math.floor((staticWindowWidth / 100)) + 1;
   platforms = new Group();
   for (i = 0; i < platformsAcross; ++i) {
-    groundTop = createSprite(i * 100, window.innerHeight - 200, 100, 100);
+    groundTop = createSprite(i * 100, window.innerHeight-200, 100, 100);
     groundTop.addAnimation("grass", grass);
     platforms.add(groundTop);
   }
   for (i = 0; i < platformsAcross; ++i) {
-    groundBot = createSprite(i * 100, window.innerHeight - 100, 100, 100);
+    groundBot = createSprite(i * 100, window.innerHeight-100, 100, 100);
     groundBot.addAnimation("dirt", dirt);
     platforms.add(groundBot);
   }
@@ -110,7 +110,8 @@ function draw() {
     player.changeAnimation("idle");
     player.velocity.y += 5;
   }
-  if ((player.position.y).collide(groundTop)) {
+  while (groundTop.overlapPixel(player.position.x, player.position.y+100)) {
+    player.position.y--;
     player.velocity.y = 0;
     jump = false;
   }
