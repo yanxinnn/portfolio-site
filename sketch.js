@@ -108,10 +108,10 @@ function draw() {
   }
   if (jump) {
     player.changeAnimation("run");
-    player.velocity.y += 0.85;
+    player.velocity.y += 0.95;
   }
   for (var i = 0; i < platforms.length; i++) {
-    if (platforms[i].overlapPixel(player.position.x, player.position.y+50)) {
+    if (platforms[i].overlapPixel(player.position.x, player.position.y+70)) {
       player.position.y--;
       player.velocity.y = 0;
       jump = false;
