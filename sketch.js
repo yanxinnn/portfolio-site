@@ -37,8 +37,8 @@ function preload() {
   snd_windyPetals = loadSound("sounds/windyPetals.mp3");
 
   // Environment
-  //grass = loadAnimation("images/environment/grass.png");
-  //dirt = loadAnimation("images/environment/dirt.png");
+  grass = loadAnimation("images/environment/grass.png");
+  dirt = loadAnimation("images/environment/dirt.png");
 
 }
 
@@ -57,17 +57,17 @@ function setup() {
   player.addAnimation("run", playerRun);
 
   // Environment
-  // platforms = new Group();
-  // for (i = 0; i < 18; ++i) {
-  //   ground = createSprite(i * 100, window.innerHeight - 200, 100, 100);
-  //   ground.addAnimation("grass", grass);
-  //   ground.addToGroup(platforms);
-  // }
-  // for (i = 0; i < 18; ++i) {
-  //   ground = createSprite(i * 100, window.innerHeight - 100, 100, 100);
-  //   ground.addAnimation("dirt", dirt);
-  //   ground.addToGroup(platforms);
-  // }
+  platforms = new Group();
+  for (i = 0; i < 18; ++i) {
+    ground = createSprite(i * 100, window.innerHeight - 200, 100, 100);
+    ground.addAnimation("grass", grass);
+    ground.addToGroup(platforms);
+  }
+  for (i = 0; i < 18; ++i) {
+    ground = createSprite(i * 100, window.innerHeight - 100, 100, 100);
+    ground.addAnimation("dirt", dirt);
+    ground.addToGroup(platforms);
+  }
 
 } // function setup
 
@@ -95,12 +95,12 @@ function draw() {
     player.changeAnimation("run");
     player.velocity.x = -5;
   }
-  else if (keyIsDown(UP_ARROW) || keyIsDown(87)) {
-    player.changeAnimation("idle");
-    player.velocity.y = 5;
-  }
-
-  //Player Ground Collision
+ //  else if (keyIsDown(UP_ARROW) || keyIsDown(87)) {
+ //    player.changeAnimation("idle");
+ //    player.velocity.y = 5;
+ //  }
+ //
+ //  // Player Ground Collision
  //  if (ground.overlapPixel(player.position.x, player.position.y+100)==false) {
  //    player.velocity.y += 0.5;
  //  }
@@ -108,9 +108,9 @@ function draw() {
  //   player.position.y--;
  //   player.velocity.y = 0;
  // }
-
- //drawSprites(platforms);
- drawSprites(player);
+ //
+ // drawSprites(platforms);
+ // drawSprites(player);
 
 } // function draw
 
