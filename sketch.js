@@ -15,6 +15,7 @@ var playerRun3 = "images/player/playerRun3.png";
 var playerRun4 = "images/player/playerRun4.png";
 var playerRun;
 var jump = false;
+var jumps = 0;
 
 // Widgets
 var snd_windyPetals;
@@ -81,6 +82,7 @@ function draw() {
   // Player Movements
   if (!jump) {
     player.changeAnimation("idle");
+    jumps = 0;
   }
   player.velocity.x = 0;
   if (lastKey == "right") {
@@ -100,7 +102,7 @@ function draw() {
     player.velocity.x = -6.5;
   }
   if (keyIsDown(UP_ARROW) || keyIsDown(87)) {
-    if (!jump) {
+    if (jumps < 1) {
       player.changeAnimation("idle");
       player.velocity.y = -18;
       jump = true;
@@ -108,13 +110,15 @@ function draw() {
   }
   if (jump) {
     player.changeAnimation("run");
-    player.velocity.y += 0.9;
+    player.velocity.y += 0.8;
+    jumps += 1;
   }
   for (var i = 0; i < platforms.length; i++) {
     if (platforms[i].overlapPixel(player.position.x, player.position.y+50)) {
       player.position.y--;
       player.velocity.y = 0;
       jump = false;
+      jumps = 0;
     }
   }
 
