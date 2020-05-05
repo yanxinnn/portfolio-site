@@ -15,7 +15,6 @@ var playerRun3 = "images/player/playerRun3.png";
 var playerRun4 = "images/player/playerRun4.png";
 var playerRun;
 var jump = false;
-var jumps = 0;
 
 // Widgets
 var snd_windyPetals;
@@ -48,7 +47,8 @@ function preload() {
 //** Setup *************
 function setup() {
 
-	createCanvas(window.innerWidth, window.innerHeight);
+	var canvas = createCanvas(window.innerWidth, window.innerHeight);
+  canvas.parent("sketch-div");
   var staticWindowWidth = window.innerWidth;
 
   // Player Animations
@@ -69,7 +69,6 @@ function setup() {
   for (i = 0; i < platformsAcross; ++i) {
     groundBot = createSprite(i * 100, window.innerHeight-100, 100, 100);
     groundBot.addAnimation("dirt", dirt);
-    platforms.add(groundBot);
   }
 
 } // function setup
@@ -80,12 +79,11 @@ function draw() {
   background(skyBackground);
 
   // Player Movements
-  if (!jump) {
-    player.changeAnimation("idle");
-    jumps = 0;
-  }
   player.velocity.x = 0;
+  player.velocity.y += 0.85;
+  player.changeAnimation("idle");
   if (lastKey == "right") {
+
     player.mirrorX(1);
   }
   else if (lastKey == "left") {
@@ -102,24 +100,21 @@ function draw() {
     player.velocity.x = -6.5;
   }
   if (keyIsDown(UP_ARROW) || keyIsDown(87)) {
-    if (jumps < 1) {
+    if (!jump) {
       player.changeAnimation("idle");
       player.velocity.y = -16;
       jump = true;
     }
   }
-  if (jump) {
-    player.changeAnimation("run");
-    player.velocity.y += 0.9;
-    jumps += 1;
-  }
   for (var i = 0; i < platforms.length; i++) {
     if (platforms[i].overlapPixel(player.position.x, player.position.y+50)) {
-      player.position.y--;
+      player.position.y -= 1;
       player.velocity.y = 0;
       jump = false;
-      jumps = 0;
     }
+  }
+  if (player.position.x < 24) {
+    player.position.x = 24;
   }
 
   drawSprites();
