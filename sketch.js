@@ -80,7 +80,6 @@ function draw() {
   // Player Movements
   player.changeAnimation("idle");
   player.velocity.x = 0;
-  player.velocity.y = 0;
   if (lastKey == "right") {
     player.mirrorX(1);
   }
