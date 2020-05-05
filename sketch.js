@@ -57,13 +57,14 @@ function setup() {
   player.addAnimation("run", playerRun);
 
   // Environment
+  var platformsAcross = (staticWindowWidth / 100) + 1;
   platforms = new Group();
-  for (i = 0; i < 18; ++i) {
+  for (i = 0; i < platformsAcross; ++i) {
     ground = createSprite(i * 100, window.innerHeight - 200, 100, 100);
     ground.addAnimation("grass", grass);
     ground.addToGroup(platforms);
   }
-  for (i = 0; i < 18; ++i) {
+  for (i = 0; i < platformsAcross; ++i) {
     ground = createSprite(i * 100, window.innerHeight - 100, 100, 100);
     ground.addAnimation("dirt", dirt);
     ground.addToGroup(platforms);
