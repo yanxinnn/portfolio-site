@@ -110,7 +110,9 @@ function draw() {
     player.changeAnimation("idle");
     player.velocity.y += 0.85;
   }
+  console.log("here");
   if (groundTop.overlapPixel(player.position.x, player.position.y+100)) {
+    console.log("now here");
     player.position.y--;
     player.velocity.y = 0;
     jump = false;
