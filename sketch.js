@@ -101,10 +101,10 @@ function draw() {
   }
 
   // Player Ground Collision
-  if (platforms.overlapPixel(player.position.x, player.position.y+100)==false) {
+  if (groundTop.overlapPixel(player.position.x, player.position.y+100)==false) {
     player.velocity.y += 0.5;
   }
-  while (platforms.overlapPixel(player.position.x, player.position.y+100)) {
+  while (groundTop.overlapPixel(player.position.x, player.position.y+100)) {
     player.position.y--;
     player.velocity.y = 0;
   }
