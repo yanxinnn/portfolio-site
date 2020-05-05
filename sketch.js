@@ -75,6 +75,7 @@ function setup() {
 function draw() {
 
 	background(skyBackground);
+  drawSprites();
 
   // Player Movements
   player.changeAnimation("idle");
@@ -118,12 +119,12 @@ function windowResized() {
   resizeCanvas(window.innerWidth, window.innerHeight);
 }
 
-var sound = document.getElementById('sound');
-sound.onclick = function() {
-  if (sound.checked) {
-    snd_windyPetals.loop();
-  }
-  else {
-    snd_windyPetals.stop();
-  }
+// var sound = document.getElementById('sound');
+// sound.onclick = function() {
+//   if (sound.checked) {
+//     snd_windyPetals.loop();
+//   }
+//   else {
+//     snd_windyPetals.stop();
+//   }
 };
