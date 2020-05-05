@@ -99,17 +99,17 @@ function draw() {
     player.changeAnimation("run");
     player.velocity.x = -5;
   }
-  else if (keyIsDown(UP_ARROW) || keyIsDown(87)) {
+  if (keyIsDown(UP_ARROW) || keyIsDown(87)) {
     if (!jump) {
       player.changeAnimation("idle");
       player.velocity.y = -8;
       jump = true;
     }
   }
-  // if (jump) {
-  //   player.changeAnimation("idle");
-  //   player.velocity.y += 5;
-  // }
+  if (jump) {
+    player.changeAnimation("idle");
+    player.velocity.y += 0.5;
+  }
   // while (groundTop.overlapPixel(player.position.x, player.position.y+100)) {
   //   player.position.y--;
   //   player.velocity.y = 0;
