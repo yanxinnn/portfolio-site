@@ -52,8 +52,8 @@ function setup() {
   var staticWindowWidth = window.innerWidth;
 
   // Player Animations
-  playerIdle.frameDelay = 20;
-  playerRun.frameDelay = 15;
+  playerIdle.frameDelay = 18;
+  playerRun.frameDelay = 13;
 
   player = createSprite(staticWindowWidth/8, window.innerHeight-300, 100, 100);
   player.addAnimation("idle", playerIdle);
