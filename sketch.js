@@ -34,7 +34,7 @@ function preload() {
   playerRun = loadAnimation(playerRun1, playerRun2, playerRun3, playerRun2, playerRun1, playerRun4, playerRun3, playerRun2);
 
   // Widgets
-  snd_windyPetals = loadSound("sounds/windyPetals.mp3");
+  //snd_windyPetals = loadSound("sounds/windyPetals.mp3");
 
   // Environment
   // grass = loadAnimation("images/environment/grass.png");
@@ -75,6 +75,7 @@ function setup() {
 function draw() {
 
 	background(skyBackground);
+
   drawSprites();
   console.log("done");
 
