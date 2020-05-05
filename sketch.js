@@ -102,7 +102,7 @@ function draw() {
   if (keyIsDown(UP_ARROW) || keyIsDown(87)) {
     if (!jump) {
       player.changeAnimation("idle");
-      player.velocity.y = -15;
+      player.velocity.y = -18;
       jump = true;
     }
   }
