@@ -107,13 +107,11 @@ function draw() {
     }
   }
   if (jump) {
-    player.changeAnimation("idle");
+    player.changeAnimation("run");
     player.velocity.y += 0.85;
   }
-  console.log(platforms.length);
   for (var i = 0; i < platforms.length; i++) {
-    if (platforms[i].overlapPixel(player.position.x, player.position.y+100)) {
-      console.log("true");
+    if (platforms[i].overlapPixel(player.position.x, player.position.y)) {
       player.position.y--;
       player.velocity.y = 0;
       jump = false;
