@@ -16,13 +16,10 @@ body {
 
 /* Mute / Unmute Widget */
 input#sound {
-  margin: 0;
   display: none;
 }
 
 .on img {
-  margin: 0;
-  margin-bottom: -30px;
   display: none;
   opacity: 0.65;
 }
@@ -33,8 +30,6 @@ input#sound {
 }
 
 .off img {
-  margin: 0;
-  margin-bottom: -30px;
   opacity: 0.65;
 }
 
