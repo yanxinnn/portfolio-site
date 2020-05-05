@@ -79,13 +79,13 @@ function draw() {
 
   // Player Movements
   player.changeAnimation("idle");
+  player.velocity.x = 0;
   if (lastKey == "right") {
     player.mirrorX(1);
   }
   else if (lastKey == "left") {
     player.mirrorX(-1);
   }
-  player.velocity.x = 0;
   if (keyIsDown(RIGHT_ARROW) || keyIsDown(68)) {
     lastKey = "right";
     player.changeAnimation("run");
@@ -127,4 +127,4 @@ function windowResized() {
 //   else {
 //     snd_windyPetals.stop();
 //   }
-};
+// };
