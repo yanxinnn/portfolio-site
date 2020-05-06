@@ -18,30 +18,34 @@ body {
 input#sound {
   display: none;
 }
-
 .on img {
   display: none;
   opacity: 0.65;
 }
-
 .on img:hover {
   opacity: 1;
   cursor: pointer;
 }
-
 .off img {
   opacity: 0.65;
 }
-
 .off img:hover{
   opacity: 1;
   cursor: pointer;
 }
-
 input#sound:checked ~ .on img {
   display: initial;
 }
-
 input#sound:checked ~ .off img {
   display: none;
+}
+.sound {
+  grid-column-start: 2;
+  grid-row-start: 2;
+}
+
+.widgets {
+  display: grid;
+  grid-template-columns: 20px 50px auto 50px 20px;
+  grid-template-rows: 12px auto 12px;
 }

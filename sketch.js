@@ -16,15 +16,18 @@ var playerRun4 = "images/player/playerRun4.png";
 var playerRun;
 var jump = false;
 
-// Widgets
+// Sounds
 var snd_windyPetals;
 
 // Environment
-var platforms;
+var platformsGroup;
 var groundTop;
 var groundBot;
 var grass;
 var dirt;
+var petal;
+var petalsGroup;
+var pinkPetal;
 
 //** Preload *************
 function preload() {
@@ -39,8 +42,9 @@ function preload() {
   snd_windyPetals = loadSound("sounds/windyPetals.mp3");
 
   // Environment
-  grass = loadAnimation("images/environment/grass.png");
-  dirt = loadAnimation("images/environment/dirt.png");
+  grass = loadImage("images/environment/grass.png");
+  dirt = loadImage("images/environment/dirt.png");
+  pinkPetal = loadImage("images/environment/petal.png");
 
 }
 
@@ -49,6 +53,8 @@ function setup() {
 
 	var canvas = createCanvas(window.innerWidth, window.innerHeight);
   canvas.parent("sketch-div");
+  canvas.position(0, 0);
+  canvas.style("z-index", "-1");
   var staticWindowWidth = window.innerWidth;
 
   // Player Animations
@@ -59,16 +65,34 @@ function setup() {
   player.addAnimation("idle", playerIdle);
   player.addAnimation("run", playerRun);
 
-  var platformsAcross = Math.floor((staticWindowWidth / 100)) + 1;
-  platforms = new Group();
+  var platformsAcross = Math.floor((staticWindowWidth / 100)) + 2;
+  platformsGroup = new Group();
   for (i = 0; i < platformsAcross; ++i) {
     groundTop = createSprite(i * 100, window.innerHeight-200, 100, 100);
-    groundTop.addAnimation("grass", grass);
-    platforms.add(groundTop);
+    groundTop.addImage(grass);
+    platformsGroup.add(groundTop);
   }
   for (i = 0; i < platformsAcross; ++i) {
     groundBot = createSprite(i * 100, window.innerHeight-100, 100, 100);
-    groundBot.addAnimation("dirt", dirt);
+    groundBot.addImage(dirt);
+  }
+
+  // Environment
+  // Petals
+  let numOfPetals = 25;
+  petalsGroup = new Group();
+  for (i = 0; i < numOfPetals; ++i) {
+    let randomX = random(0, window.innerWidth * 1.2);
+    let randomY = random(0, window.innerHeight);
+    let petalX = random(-0.2, -1);
+    let petalY = random(1, 3);
+    let petalRotation = random(0, 4);
+    petal = createSprite(randomX, randomY, 14, 14);
+    petal.addImage(pinkPetal);
+    petal.rotation = random(0, 360);
+    petalsGroup.add(petal);
+    petal.setVelocity(petalX, petalY);
+    petal.rotationSpeed = petalRotation;
   }
 
 } // function setup
@@ -106,8 +130,8 @@ function draw() {
       jump = true;
     }
   }
-  for (var i = 0; i < platforms.length; i++) {
-    if (platforms[i].overlapPixel(player.position.x, player.position.y+50)) {
+  for (var i = 0; i < platformsGroup.length; i++) {
+    if (platformsGroup[i].overlapPixel(player.position.x, player.position.y+50)) {
       player.position.y -= 1;
       player.velocity.y = 0;
       jump = false;
@@ -115,6 +139,24 @@ function draw() {
   }
   if (player.position.x < 24) {
     player.position.x = 24;
+  }
+
+  // Petals
+  for (i = 0; i < petalsGroup.length; ++i) {
+    if (petalsGroup[i].position.x < 0 || petalsGroup[i].position.y > window.innerHeight) {
+      petalsGroup[i].remove();
+      let randomX = random(0, window.innerWidth);
+      let randomY = random(-100, 0);
+      let petalX = random(-0.75, -1.8);
+      let petalY = random(1, 3);
+      let petalRotation = random(0, 4);
+      petal = createSprite(randomX, randomY, 14, 14);
+      petal.addImage(pinkPetal);
+      petal.rotation = random(0, 360);
+      petalsGroup.add(petal);
+      petal.setVelocity(petalX, petalY);
+      petal.rotationSpeed = petalRotation;
+    }
   }
 
   drawSprites();
