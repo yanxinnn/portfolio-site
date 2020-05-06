@@ -195,6 +195,6 @@ function toggleSound() {
     snd_windyPetals.loop();
   }
   else {
-    snd_windyPetals.stop();
+    snd_windyPetals.pause();
   }
 }
