@@ -28,6 +28,13 @@ var dirt;
 var petal;
 var petalsGroup;
 var pinkPetal;
+var grassBlade;
+var grassblade;
+var grassBlade1 = "images/environment/grassblade1.png";
+var grassBlade2 = "images/environment/grassblade2.png";
+var grassBlade3 = "images/environment/grassblade3.png";
+var grassBlade4 = "images/environment/grassblade4.png";
+var grassBlade5 = "images/environment/grassblade5.png";
 
 //** Preload *************
 function preload() {
@@ -45,6 +52,7 @@ function preload() {
   grass = loadImage("images/environment/grass.png");
   dirt = loadImage("images/environment/dirt.png");
   pinkPetal = loadImage("images/environment/petal.png");
+  grassBlade = loadAnimation(grassBlade1, grassBlade2, grassBlade3, grassBlade4, grassBlade5, grassBlade4, grassBlade3, grassBlade2);
 
 }
 
@@ -65,6 +73,7 @@ function setup() {
   player.addAnimation("idle", playerIdle);
   player.addAnimation("run", playerRun);
 
+  // Platforms
   var platformsAcross = Math.floor((staticWindowWidth / 100)) + 2;
   platformsGroup = new Group();
   for (i = 0; i < platformsAcross; ++i) {
@@ -79,7 +88,7 @@ function setup() {
 
   // Environment
   // Petals
-  let numOfPetals = 25;
+  let numOfPetals = 50;
   petalsGroup = new Group();
   for (i = 0; i < numOfPetals; ++i) {
     let randomX = random(0, window.innerWidth * 1.2);
@@ -87,12 +96,22 @@ function setup() {
     let petalX = random(-0.2, -1);
     let petalY = random(1, 3);
     let petalRotation = random(0, 4);
+    let scaleX = random(0.8, 1);
     petal = createSprite(randomX, randomY, 14, 14);
     petal.addImage(pinkPetal);
     petal.rotation = random(0, 360);
-    petalsGroup.add(petal);
     petal.setVelocity(petalX, petalY);
     petal.rotationSpeed = petalRotation;
+    petal.scale = scaleX;
+    petalsGroup.add(petal);
+  }
+  // Grassblades
+  grassBlade.frameDelay = 11;
+  let numOfGrassblades = 10;
+  for (i = 0; i < numOfGrassblades; ++i) {
+    let randomX = random(0, window.innerWidth);
+    grassblade = createSprite(randomX, window.innerHeight-262);
+    grassblade.addAnimation("grassBlade", grassBlade);
   }
 
 } // function setup
@@ -101,7 +120,7 @@ function setup() {
 function draw() {
 
   background(skyBackground);
-
+  
   // Player Movements
   player.velocity.x = 0;
   player.velocity.y += 0.85;
@@ -145,17 +164,19 @@ function draw() {
   for (i = 0; i < petalsGroup.length; ++i) {
     if (petalsGroup[i].position.x < 0 || petalsGroup[i].position.y > window.innerHeight) {
       petalsGroup[i].remove();
-      let randomX = random(0, window.innerWidth);
+      let randomX = random(0, window.innerWidth * 1.2);
       let randomY = random(-100, 0);
       let petalX = random(-0.75, -1.8);
       let petalY = random(1, 3);
       let petalRotation = random(0, 4);
+      let scaleX = random(0.8, 1);
       petal = createSprite(randomX, randomY, 14, 14);
       petal.addImage(pinkPetal);
       petal.rotation = random(0, 360);
-      petalsGroup.add(petal);
       petal.setVelocity(petalX, petalY);
       petal.rotationSpeed = petalRotation;
+      petal.scale = scaleX;
+      petalsGroup.add(petal);
     }
   }
 
