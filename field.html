@@ -1,0 +1,45 @@
+<html lang="en">
+
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Yanxin Jiang</title>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+  <script src="lib/p5.play.js" type="text/javascript"></script>
+  <script src="lib/p5.sound.js" type="text/javascript"></script>
+  <script src="field.js"></script>
+  <link rel="icon" type="image/png" href="images/icon-daisy.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div class="widgets">
+    <div class="sound">
+      <!-- Mute / Unmute Widget -->
+      <!-- reference : https://stackoverflow.com/questions/22918220/how-to-create-a-only-mute-unmute-button-like-youtube-in-html -->
+      <input type="checkbox" id="sound" onClick="toggleSound()">
+      <label for="sound" class="on">
+        <img src="images/widgets/sound1.png">
+      </label>
+      <label for="sound" class="off">
+        <img src="images/widgets/sound2.png">
+      </label>
+    </div>
+  </div>
+
+  <div class="bottomMessage">Use "WASD" or arrow keys to move around</div>
+
+  <!-- Javascript Sketch -->
+  <div id="field-div"></div>
+
+  <!-- Light / Dark Mode Widget -->
+  <!-- <input type="checkbox" id="light/dark mode">
+  <label for="light/dark mode" class="light">
+  </label>
+  <label for="dark" class="dark">
+  </label> -->
+
+</body>

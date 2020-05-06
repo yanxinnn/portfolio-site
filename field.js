@@ -60,7 +60,7 @@ function preload() {
 function setup() {
 
 	var canvas = createCanvas(window.innerWidth, window.innerHeight);
-  canvas.parent("sketch-div");
+  canvas.parent("field-div");
   canvas.position(0, 0);
   canvas.style("z-index", "-1");
   var staticWindowWidth = window.innerWidth;
@@ -69,7 +69,7 @@ function setup() {
   playerIdle.frameDelay = 18;
   playerRun.frameDelay = 13;
 
-  player = createSprite(staticWindowWidth/8, window.innerHeight-300, 100, 100);
+  player = createSprite(staticWindowWidth/8, window.innerHeight-200, 100, 100);
   player.addAnimation("idle", playerIdle);
   player.addAnimation("run", playerRun);
 
@@ -77,12 +77,12 @@ function setup() {
   var platformsAcross = Math.floor((staticWindowWidth / 100)) + 2;
   platformsGroup = new Group();
   for (i = 0; i < platformsAcross; ++i) {
-    groundTop = createSprite(i * 100, window.innerHeight-200, 100, 100);
+    groundTop = createSprite(i * 100, window.innerHeight-100, 100, 100);
     groundTop.addImage(grass);
     platformsGroup.add(groundTop);
   }
   for (i = 0; i < platformsAcross; ++i) {
-    groundBot = createSprite(i * 100, window.innerHeight-100, 100, 100);
+    groundBot = createSprite(i * 100, window.innerHeight, 100, 100);
     groundBot.addImage(dirt);
   }
 
@@ -110,7 +110,7 @@ function setup() {
   let numOfGrassblades = 10;
   for (i = 0; i < numOfGrassblades; ++i) {
     let randomX = random(0, window.innerWidth);
-    grassblade = createSprite(randomX, window.innerHeight-262);
+    grassblade = createSprite(randomX, window.innerHeight-162);
     grassblade.addAnimation("grassBlade", grassBlade);
   }
 
@@ -120,7 +120,7 @@ function setup() {
 function draw() {
 
   background(skyBackground);
-  
+
   // Player Movements
   player.velocity.x = 0;
   player.velocity.y += 0.85;
@@ -188,12 +188,13 @@ function windowResized() {
   resizeCanvas(window.innerWidth, window.innerHeight);
 }
 
-var sound = document.getElementById('sound');
-sound.onclick = function() {
+// Widgets
+function toggleSound() {
+  var sound = document.getElementById("sound");
   if (sound.checked) {
     snd_windyPetals.loop();
   }
   else {
     snd_windyPetals.stop();
   }
-};
+}

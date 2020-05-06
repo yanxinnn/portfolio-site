@@ -14,6 +14,33 @@ body {
 
 }
 
+button:hover {
+  cursor: pointer;
+}
+
+/* Main Menu Options */
+.mainMenu {
+  display: grid;
+  grid-template-columns: 50% auto 50%;
+}
+
+.playButton {
+  grid-column-start: 2;
+}
+#playButton {
+  font-size: 24px;
+  padding: 8px 14px;
+  border-radius: 5px;
+}
+
+
+/* In-game Widgets */
+.widgets {
+  display: grid;
+  grid-template-columns: 20px 50px auto 50px 20px;
+  grid-template-rows: 12px auto 12px;
+}
+
 /* Mute / Unmute Widget */
 input#sound {
   display: none;
@@ -44,8 +71,9 @@ input#sound:checked ~ .off img {
   grid-row-start: 2;
 }
 
-.widgets {
-  display: grid;
-  grid-template-columns: 20px 50px auto 50px 20px;
-  grid-template-rows: 12px auto 12px;
+.bottomMessage {
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-family: 'Poppins', sans-serif;
 }
